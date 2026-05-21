@@ -40,7 +40,7 @@ export default function BattleScene({ state, dispatch }: Props) {
           dispatch={dispatch}
         />
         <PlayerPanel
-          name="TRAINER"
+          name="RECRUITER"
           level={99}
         />
         <div className={styles.enemySprite}>ZACHARY DOLL</div>

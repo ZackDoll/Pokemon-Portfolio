@@ -11,10 +11,10 @@
 
 .name {
   position: absolute;
-  top: 10px;
-  left: 14px;
+  top: 15px;
+  left: 36px;
   font-family: var(--font-pixel);
-  font-size: 16px;
+  font-size: 18px;
   color: var(--pokemon-black);
   white-space: nowrap;
   text-shadow: 1px 1px 0 rgba(136, 120, 152, 0.9);
@@ -22,10 +22,10 @@
 
 .level {
   position: absolute;
-  top: 28px;
-  left: 120px;
+  top: 15px;
+  left: 165px;
   font-family: var(--font-pixel);
-  font-size: 16px;
+  font-size: 18px;
   color: var(--pokemon-black);
   white-space: nowrap;
   text-shadow: 1px 1px 0 rgba(136, 120, 152, 0.9);
