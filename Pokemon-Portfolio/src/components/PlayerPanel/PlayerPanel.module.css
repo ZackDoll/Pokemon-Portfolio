@@ -1,0 +1,36 @@
+.panel {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+  width: 220px;
+  background: var(--pokemon-panel-bg);
+  border: 3px solid var(--pokemon-panel-border);
+  padding: 6px 8px;
+  box-shadow: 3px 3px 0 var(--pokemon-shadow);
+}
+
+.nameRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 4px;
+}
+
+.name {
+  font-family: var(--font-pixel);
+  font-size: 8px;
+  color: var(--pokemon-black);
+}
+
+.level {
+  font-family: var(--font-pixel);
+  font-size: 7px;
+  color: var(--pokemon-black);
+}
+
+.expBar {
+  margin-top: 4px;
+  height: 3px;
+  background: #3878f8;
+  width: 60%;
+}

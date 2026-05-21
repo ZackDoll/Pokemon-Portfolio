@@ -1,0 +1,43 @@
+.panel {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 200px;
+  background: var(--pokemon-panel-bg);
+  border: 3px solid var(--pokemon-panel-border);
+  padding: 6px 8px;
+  box-shadow: 3px 3px 0 var(--pokemon-shadow);
+}
+
+.nameRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 4px;
+}
+
+.name {
+  font-family: var(--font-pixel);
+  font-size: 8px;
+  color: var(--pokemon-black);
+  letter-spacing: 0;
+}
+
+.level {
+  font-family: var(--font-pixel);
+  font-size: 7px;
+  color: var(--pokemon-black);
+}
+
+/* Flash animation during attack */
+.flashing {
+  animation: attackFlash 0.5s ease;
+}
+
+@keyframes attackFlash {
+  0%   { filter: brightness(1); }
+  20%  { filter: brightness(8) saturate(0); }
+  40%  { filter: brightness(1); }
+  70%  { filter: brightness(8) saturate(0); }
+  100% { filter: brightness(1); }
+}

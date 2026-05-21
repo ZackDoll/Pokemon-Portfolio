@@ -1,0 +1,109 @@
+.scene {
+  position: relative;
+  width: 832px;
+  height: 384px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.battleArea {
+  position: relative;
+  width: 832px;
+  height: 288px;
+  background-image: url('/pokemon-assets/DS _ DSi - Pokemon Diamond _ Pearl - Backgrounds - Battle Backgrounds.png');
+  background-repeat: no-repeat;
+  background-size: 832px auto;
+  background-position: 0 0;
+  overflow: hidden;
+}
+
+/* Enemy platform oval — upper right area */
+.enemyPlatform {
+  position: absolute;
+  bottom: 68px;
+  right: 80px;
+  width: 140px;
+  height: 28px;
+  background-image: url('/pokemon-assets/Game Boy Advance - Pokemon Ruby _ Sapphire - Battle Effects - Battle Arenas.png');
+  background-repeat: no-repeat;
+  background-size: 480px auto;
+  background-position: 0 -12px;
+  opacity: 0.85;
+}
+
+/* Player platform oval — lower left area */
+.playerPlatform {
+  position: absolute;
+  bottom: 16px;
+  left: 80px;
+  width: 180px;
+  height: 36px;
+  background-image: url('/pokemon-assets/Game Boy Advance - Pokemon Ruby _ Sapphire - Battle Effects - Battle Arenas.png');
+  background-repeat: no-repeat;
+  background-size: 480px auto;
+  background-position: 0 -78px;
+  opacity: 0.85;
+}
+
+/* Placeholder sprite positions — replaced by real sprites later */
+.enemySprite {
+  position: absolute;
+  bottom: 76px;
+  right: 100px;
+  width: 96px;
+  height: 96px;
+  background: rgba(200, 120, 200, 0.6);
+  border: 3px solid #a060a0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-pixel);
+  font-size: 7px;
+  color: #fff;
+}
+
+.playerSprite {
+  position: absolute;
+  bottom: 28px;
+  left: 80px;
+  width: 80px;
+  height: 80px;
+  background: rgba(80, 120, 200, 0.6);
+  border: 3px solid #4060a0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-pixel);
+  font-size: 7px;
+  color: #fff;
+}
+
+/* UI bar at the bottom */
+.uiBar {
+  position: relative;
+  width: 832px;
+  height: 96px;
+  background: var(--pokemon-white);
+  border-top: 3px solid var(--pokemon-black);
+  display: flex;
+}
+
+.uiLeft {
+  flex: 1;
+  border-right: 3px solid var(--pokemon-black);
+  display: flex;
+  align-items: stretch;
+}
+
+.uiRight {
+  width: 320px;
+  display: flex;
+  align-items: stretch;
+}
+
+/* Responsive scale */
+@media (max-width: 832px) {
+  .scene {
+    transform-origin: top center;
+  }
+}

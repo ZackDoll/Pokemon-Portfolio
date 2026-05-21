@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.label {
+  font-family: var(--font-pixel);
+  font-size: 6px;
+  color: var(--pokemon-black);
+  flex-shrink: 0;
+}
+
+.track {
+  flex: 1;
+  height: 6px;
+  background: #585840;
+  border: 1px solid #303020;
+  position: relative;
+  overflow: hidden;
+}
+
+.bar {
+  height: 100%;
+  transition: width 600ms ease-out, background-color 200ms ease;
+}
+
+.green {
+  background-color: var(--pokemon-hp-green);
+}
+
+.yellow {
+  background-color: var(--pokemon-hp-yellow);
+}
+
+.red {
+  background-color: var(--pokemon-hp-red);
+}
+
+.numbers {
+  font-family: var(--font-pixel);
+  font-size: 7px;
+  color: var(--pokemon-black);
+  text-align: right;
+  white-space: nowrap;
+  margin-top: 3px;
+}

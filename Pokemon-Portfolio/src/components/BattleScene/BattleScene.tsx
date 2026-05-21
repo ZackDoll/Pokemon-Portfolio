@@ -1,0 +1,78 @@
+import { useEffect, useRef } from 'react'
+import type { BattleState, BattleAction } from '../../types/battle'
+import EnemyPanel from '../EnemyPanel/EnemyPanel'
+import PlayerPanel from '../PlayerPanel/PlayerPanel'
+import BattleDialogue from '../BattleDialogue/BattleDialogue'
+import MoveMenu from '../MoveMenu/MoveMenu'
+import BattleIntro from '../BattleIntro/BattleIntro'
+import styles from './BattleScene.module.css'
+
+interface Props {
+  state: BattleState
+  dispatch: React.Dispatch<BattleAction>
+}
+
+export default function BattleScene({ state, dispatch }: Props) {
+  const sceneRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    function scale() {
+      if (!sceneRef.current) return
+      const vw = window.innerWidth
+      const ratio = Math.min(1, vw / 832)
+      sceneRef.current.style.transform = `scale(${ratio})`
+      sceneRef.current.style.transformOrigin = 'top center'
+    }
+    scale()
+    window.addEventListener('resize', scale)
+    return () => window.removeEventListener('resize', scale)
+  }, [])
+
+  return (
+    <div ref={sceneRef} className={styles.scene}>
+      {/* Battle area */}
+      <div className={styles.battleArea}>
+        <EnemyPanel
+          hp={state.enemyHp}
+          hpMax={state.enemyHpMax}
+          name="ZACK"
+          level={26}
+          phase={state.phase}
+          dispatch={dispatch}
+        />
+        <PlayerPanel
+          hp={state.playerHp}
+          hpMax={state.playerHpMax}
+          name="TRAINER"
+          level={99}
+        />
+        <div className={styles.enemyPlatform} />
+        <div className={styles.playerPlatform} />
+        <div className={styles.enemySprite}>ZACK</div>
+        <div className={styles.playerSprite}>YOU</div>
+      </div>
+
+      {/* UI bar */}
+      <div className={styles.uiBar}>
+        <div className={styles.uiLeft}>
+          <BattleDialogue
+            text={state.currentDialogue}
+            complete={state.dialogueComplete}
+            phase={state.phase}
+            dispatch={dispatch}
+          />
+        </div>
+        <div className={styles.uiRight}>
+          <MoveMenu
+            moves={state.moves}
+            phase={state.phase}
+            dispatch={dispatch}
+          />
+        </div>
+      </div>
+
+      {/* Intro overlay */}
+      <BattleIntro phase={state.phase} dispatch={dispatch} />
+    </div>
+  )
+}
