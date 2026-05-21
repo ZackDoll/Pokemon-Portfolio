@@ -10,7 +10,7 @@ export const INITIAL_MOVES: Move[] = [
     damage: 20,
     used: false,
     dialogueLines: [
-      'A wild ZACK appeared!',
+      'A wild ZACHARY DOLL appeared!',
       'Zack is a software developer\nwho loves building things.',
       'He is passionate about\nclean code and pixel art.',
       'Nice to meet you!',
@@ -25,7 +25,7 @@ export const INITIAL_MOVES: Move[] = [
     damage: 25,
     used: false,
     dialogueLines: [
-      'ZACK used SKILLS!',
+      'ZACHARY DOLL used SKILLS!',
       'React, TypeScript, Node.js,\nPython, PostgreSQL.',
       'Also fluent in:\nDocker, AWS, Git.',
       "It's super effective!",
@@ -40,10 +40,10 @@ export const INITIAL_MOVES: Move[] = [
     damage: 35,
     used: false,
     dialogueLines: [
-      'ZACK used PROJECTS!',
+      'ZACHARY DOLL used PROJECTS!',
       'Project 1: A full-stack web app\nfor managing [description].',
       'Project 2: [Description].\ngithub.com/zack/project2',
-      "ZACK's portfolio took a\ncritical hit!",
+      "ZACHARY DOLL's portfolio took a\ncritical hit!",
     ],
   },
   {
@@ -55,16 +55,16 @@ export const INITIAL_MOVES: Move[] = [
     damage: 20,
     used: false,
     dialogueLines: [
-      'ZACK used CONTACT!',
+      'ZACHARY DOLL used CONTACT!',
       'Email:\nzack@example.com',
       'LinkedIn: linkedin.com/in/zack\nGitHub: github.com/zack',
-      'ZACK wants to connect!',
+      'ZACHARY DOLL wants to connect!',
     ],
   },
 ]
 
 export const ENEMY_POKEMON = {
-  name: 'ZACK',
+  name: 'ZACHARY DOLL',
   level: 21,
   hpMax: 100,
 }

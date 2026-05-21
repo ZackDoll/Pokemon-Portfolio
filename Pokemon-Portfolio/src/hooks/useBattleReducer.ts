@@ -71,7 +71,7 @@ function battleReducer(state: BattleState, action: BattleAction): BattleState {
         return {
           ...state,
           phase: 'fainted',
-          currentDialogue: 'ZACK fainted!',
+          currentDialogue: 'ZACHARY DOLL fainted!',
           dialogueComplete: false,
         }
       }

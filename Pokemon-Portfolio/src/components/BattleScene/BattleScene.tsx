@@ -34,7 +34,7 @@ export default function BattleScene({ state, dispatch }: Props) {
         <EnemyPanel
           hp={state.enemyHp}
           hpMax={state.enemyHpMax}
-          name="ZACK"
+          name="ZACHARY DOLL"
           level={21}
           phase={state.phase}
           dispatch={dispatch}
@@ -45,7 +45,7 @@ export default function BattleScene({ state, dispatch }: Props) {
           name="TRAINER"
           level={99}
         />
-        <div className={styles.enemySprite}>ZACK</div>
+        <div className={styles.enemySprite}>ZACHARY DOLL</div>
         <div className={styles.playerSprite}>YOU</div>
       </div>
 

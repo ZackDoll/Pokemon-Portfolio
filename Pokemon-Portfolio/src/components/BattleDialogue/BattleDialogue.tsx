@@ -11,8 +11,8 @@ interface Props {
 }
 
 const FAINTED_SEQUENCE = [
-  'ZACK fainted!',
-  "You've learned everything\nabout ZACK.",
+  'ZACHARY DOLL fainted!',
+  "You've learned everything\nabout ZACHARY DOLL.",
   'Visit these links\nto connect:',
 ]
 
@@ -64,7 +64,7 @@ export default function BattleDialogue({ text, complete, phase, dispatch }: Prop
   if (isFainted && showLinks) {
     return (
       <div className={styles.box}>
-        <div className={styles.linksTitle}>Connect with ZACK:</div>
+        <div className={styles.linksTitle}>Connect with ZACHARY DOLL:</div>
         <div className={styles.links}>
           <a className={styles.link} href="https://github.com/zack" target="_blank" rel="noreferrer">▶ GitHub</a>
           <a className={styles.link} href="https://linkedin.com/in/zack" target="_blank" rel="noreferrer">▶ LinkedIn</a>
