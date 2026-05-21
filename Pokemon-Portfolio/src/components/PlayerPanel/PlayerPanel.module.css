@@ -17,6 +17,7 @@
   font-size: 16px;
   color: var(--pokemon-black);
   white-space: nowrap;
+  text-shadow: 1px 1px 0 rgba(136, 120, 152, 0.9);
 }
 
 .level {
@@ -27,4 +28,5 @@
   font-size: 16px;
   color: var(--pokemon-black);
   white-space: nowrap;
+  text-shadow: 1px 1px 0 rgba(136, 120, 152, 0.9);
 }

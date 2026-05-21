@@ -19,6 +19,7 @@
   color: #ffffff;
   white-space: pre-wrap;
   flex: 1;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.9);
 }
 
 .cursor {

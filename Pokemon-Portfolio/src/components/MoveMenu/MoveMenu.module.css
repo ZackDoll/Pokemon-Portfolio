@@ -50,6 +50,7 @@
   font-size: 7px;
   color: var(--pokemon-black);
   letter-spacing: 0;
+  text-shadow: 1px 1px 0 rgba(136, 120, 152, 0.9);
 }
 
 .used .moveName {
