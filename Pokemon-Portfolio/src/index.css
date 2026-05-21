@@ -1,4 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@font-face {
+  font-family: 'PokemonFRLG';
+  src: url('/pokemon-assets/pokemon-frlg.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
 
 :root {
   --pokemon-white: #f8f8f8;
@@ -10,7 +15,7 @@
   --pokemon-panel-border: #686040;
   --pokemon-dialogue-bg: #f0f0f0;
   --pokemon-shadow: #a8a070;
-  --font-pixel: 'Press Start 2P', monospace;
+  --font-pixel: 'PokemonFRLG', monospace;
 }
 
 *,
