@@ -18,10 +18,9 @@ export default function BattleScene({ state, dispatch }: Props) {
   useEffect(() => {
     function scale() {
       if (!sceneRef.current) return
-      const vw = window.innerWidth
-      const ratio = Math.min(1, vw / 832)
+      const ratio = Math.min(window.innerWidth / 832, window.innerHeight / 384)
       sceneRef.current.style.transform = `scale(${ratio})`
-      sceneRef.current.style.transformOrigin = 'top center'
+      sceneRef.current.style.transformOrigin = 'center center'
     }
     scale()
     window.addEventListener('resize', scale)

@@ -104,9 +104,3 @@
   align-items: stretch;
 }
 
-/* Responsive scale */
-@media (max-width: 832px) {
-  .scene {
-    transform-origin: top center;
-  }
-}
