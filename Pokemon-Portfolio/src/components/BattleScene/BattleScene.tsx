@@ -5,6 +5,7 @@ import PlayerPanel from '../PlayerPanel/PlayerPanel'
 import BattleDialogue from '../BattleDialogue/BattleDialogue'
 import MoveMenu from '../MoveMenu/MoveMenu'
 import BattleIntro from '../BattleIntro/BattleIntro'
+import ProjectMenu from '../ProjectMenu/ProjectMenu'
 import styles from './BattleScene.module.css'
 
 interface Props {
@@ -68,6 +69,9 @@ export default function BattleScene({ state, dispatch }: Props) {
 
       {/* Intro overlay */}
       <BattleIntro phase={state.phase} dispatch={dispatch} />
+
+      {/* Project party menu */}
+      <ProjectMenu phase={state.phase} dispatch={dispatch} />
 
       {/* Restart button */}
       <button

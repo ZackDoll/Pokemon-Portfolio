@@ -1,6 +1,6 @@
 import { useReducer } from 'react'
 import type { BattleState, BattleAction } from '../types/battle'
-import { INITIAL_STATE } from '../data/battleData'
+import { INITIAL_STATE, PROJECTS } from '../data/battleData'
 
 function battleReducer(state: BattleState, action: BattleAction): BattleState {
   switch (action.type) {
@@ -16,6 +16,11 @@ function battleReducer(state: BattleState, action: BattleAction): BattleState {
       if (state.phase !== 'move_select') return state
       const move = state.moves.find((m) => m.id === action.moveId)
       if (!move) return state
+
+      // Projects move opens the party menu instead of attacking directly
+      if (move.id === 'projects') {
+        return { ...state, phase: 'project_menu' }
+      }
 
       const updatedMoves = state.moves.map((m) =>
         m.id === action.moveId ? { ...m, used: true, pp: 0 } : m
@@ -33,6 +38,48 @@ function battleReducer(state: BattleState, action: BattleAction): BattleState {
         dialogueComplete: false,
       }
     }
+
+    case 'SELECT_PROJECT': {
+      if (state.phase !== 'project_menu') return state
+      const project = PROJECTS.find((p) => p.id === action.projectId)
+      if (!project) return state
+      const projectsMove = state.moves.find((m) => m.id === 'projects')
+      if (!projectsMove) return state
+
+      // If already used, just replay dialogue without draining HP again
+      if (projectsMove.used) {
+        return {
+          ...state,
+          phase: 'dialogue',
+          currentDialogue: project.dialogueLines[0] ?? '',
+          dialogueQueue: project.dialogueLines.slice(1),
+          dialogueComplete: false,
+        }
+      }
+
+      const updatedMoves = state.moves.map((m) =>
+        m.id === 'projects' ? { ...m, used: true, pp: 0 } : m
+      )
+      const newHp = Math.max(0, state.enemyHp - projectsMove.damage)
+      return {
+        ...state,
+        phase: 'animating',
+        activeMove: 'projects',
+        enemyHp: newHp,
+        moves: updatedMoves,
+        dialogueQueue: project.dialogueLines.slice(1),
+        currentDialogue: project.dialogueLines[0] ?? '',
+        dialogueComplete: false,
+      }
+    }
+
+    case 'CLOSE_PROJECT_MENU':
+      return {
+        ...state,
+        phase: 'move_select',
+        currentDialogue: 'What will\nRECRUITER do?',
+        dialogueComplete: false,
+      }
 
     case 'HP_DRAIN_COMPLETE': {
       if (state.phase !== 'animating') return state

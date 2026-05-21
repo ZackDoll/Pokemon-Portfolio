@@ -2,6 +2,7 @@ export type BattlePhase =
   | 'intro'
   | 'idle'
   | 'move_select'
+  | 'project_menu'
   | 'animating'
   | 'dialogue'
   | 'fainted'
@@ -40,10 +41,22 @@ export interface BattleState {
   activeMove: string | null
 }
 
+export interface Project {
+  id: string
+  name: string
+  level: number
+  hp: number
+  hpMax: number
+  tagline: string
+  dialogueLines: string[]
+}
+
 export type BattleAction =
   | { type: 'INTRO_COMPLETE' }
   | { type: 'OPEN_MOVE_MENU' }
   | { type: 'SELECT_MOVE'; moveId: string }
+  | { type: 'SELECT_PROJECT'; projectId: string }
+  | { type: 'CLOSE_PROJECT_MENU' }
   | { type: 'HP_DRAIN_COMPLETE' }
   | { type: 'TYPEWRITER_COMPLETE' }
   | { type: 'ADVANCE_DIALOGUE' }

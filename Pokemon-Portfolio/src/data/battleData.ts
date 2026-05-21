@@ -1,4 +1,91 @@
-import type { Move, BattleState } from '../types/battle'
+import type { Move, Project, BattleState } from '../types/battle'
+
+export const PROJECTS: Project[] = [
+  {
+    id: 'project1',
+    name: 'PROJECT ONE',
+    level: 24,
+    hp: 45,
+    hpMax: 45,
+    tagline: 'Full-stack web application',
+    dialogueLines: [
+      'ZACHARY DOLL used\nPROJECTS!',
+      'Project 1: [Name here].',
+      '[Description of what it does\nand what you learned.]',
+      'github.com/zack/project1',
+    ],
+  },
+  {
+    id: 'project2',
+    name: 'PROJECT TWO',
+    level: 22,
+    hp: 38,
+    hpMax: 45,
+    tagline: 'React + TypeScript app',
+    dialogueLines: [
+      'ZACHARY DOLL used\nPROJECTS!',
+      'Project 2: [Name here].',
+      '[Description of what it does\nand what you learned.]',
+      'github.com/zack/project2',
+    ],
+  },
+  {
+    id: 'project3',
+    name: 'PROJECT THREE',
+    level: 19,
+    hp: 20,
+    hpMax: 45,
+    tagline: 'REST API with Node.js',
+    dialogueLines: [
+      'ZACHARY DOLL used\nPROJECTS!',
+      'Project 3: [Name here].',
+      '[Description of what it does\nand what you learned.]',
+      'github.com/zack/project3',
+    ],
+  },
+  {
+    id: 'project4',
+    name: 'PROJECT FOUR',
+    level: 17,
+    hp: 45,
+    hpMax: 45,
+    tagline: 'Mobile app with React Native',
+    dialogueLines: [
+      'ZACHARY DOLL used\nPROJECTS!',
+      'Project 4: [Name here].',
+      '[Description of what it does\nand what you learned.]',
+      'github.com/zack/project4',
+    ],
+  },
+  {
+    id: 'project5',
+    name: 'PROJECT FIVE',
+    level: 15,
+    hp: 30,
+    hpMax: 45,
+    tagline: 'Python data pipeline',
+    dialogueLines: [
+      'ZACHARY DOLL used\nPROJECTS!',
+      'Project 5: [Name here].',
+      '[Description of what it does\nand what you learned.]',
+      'github.com/zack/project5',
+    ],
+  },
+  {
+    id: 'project6',
+    name: 'PROJECT SIX',
+    level: 12,
+    hp: 12,
+    hpMax: 45,
+    tagline: 'CLI tool built in Go',
+    dialogueLines: [
+      'ZACHARY DOLL used\nPROJECTS!',
+      'Project 6: [Name here].',
+      '[Description of what it does\nand what you learned.]',
+      'github.com/zack/project6',
+    ],
+  },
+]
 
 export const INITIAL_MOVES: Move[] = [
   {

@@ -1,0 +1,141 @@
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  background-image: url('/pokemon-assets/slotted_menu_background.png');
+  background-size: 100% 100%;
+  user-select: none;
+}
+
+/* ── Main slot (top-left, square) ── */
+.mainSlot {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 254px;
+  height: 150px;
+  background-image: url('/pokemon-assets/main_slot.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.mainSlot.focused {
+  background-image: url('/pokemon-assets/main_slot_hovered.png');
+}
+
+.mainName {
+  position: absolute;
+  top: 28px;
+  left: 80px;
+  right: 8px;
+  font-family: var(--font-pixel);
+  font-size: 14px;
+  color: var(--pokemon-black);
+  text-shadow: 1px 1px 0 rgba(136, 120, 152, 0.9);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.mainLevel {
+  position: absolute;
+  top: 66px;
+  left: 108px;
+  font-family: var(--font-pixel);
+  font-size: 13px;
+  color: var(--pokemon-black);
+  text-shadow: 1px 1px 0 rgba(136, 120, 152, 0.9);
+}
+
+.mainHpFill {
+  position: absolute;
+  top: 102px;
+  left: 38px;
+  height: 7px;
+  max-width: 180px;
+}
+
+/* ── Side slots (right column) ── */
+.slot {
+  position: absolute;
+  left: 292px;
+  width: 514px;
+  height: 54px;
+  background-image: url('/pokemon-assets/slot.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.slot.focused {
+  background-image: url('/pokemon-assets/slot_hovered.png');
+}
+
+.slotName {
+  position: absolute;
+  top: 8px;
+  left: 86px;
+  font-family: var(--font-pixel);
+  font-size: 13px;
+  color: var(--pokemon-black);
+  text-shadow: 1px 1px 0 rgba(136, 120, 152, 0.9);
+  white-space: nowrap;
+}
+
+.slotLevel {
+  position: absolute;
+  top: 34px;
+  left: 64px;
+  font-family: var(--font-pixel);
+  font-size: 11px;
+  color: var(--pokemon-black);
+  text-shadow: 1px 1px 0 rgba(136, 120, 152, 0.9);
+}
+
+.slotHpFill {
+  position: absolute;
+  top: 22px;
+  left: 274px;
+  height: 7px;
+  max-width: 200px;
+}
+
+/* ── Bottom info bar ── */
+.infoBar {
+  position: absolute;
+  bottom: 22px;
+  left: 22px;
+  width: 580px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  font-family: var(--font-pixel);
+  font-size: 12px;
+  color: var(--pokemon-black);
+  text-shadow: 1px 1px 0 rgba(136, 120, 152, 0.9);
+}
+
+/* ── Cancel button (over purple oval in background) ── */
+.cancelBtn {
+  position: absolute;
+  bottom: 22px;
+  right: 22px;
+  width: 120px;
+  height: 34px;
+  background: none;
+  border: none;
+  font-family: var(--font-pixel);
+  font-size: 12px;
+  color: #fff;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
