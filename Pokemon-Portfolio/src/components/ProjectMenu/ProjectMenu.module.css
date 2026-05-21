@@ -10,11 +10,12 @@
 /* ── Main slot (top-left, square) ── */
 .mainSlot {
   position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 254px;
-  height: 150px;
+  top: 46px;
+  left: 5px;
+  width: 294px;
+  height: 134px;
   background-image: url('/pokemon-assets/main_slot.png');
+  background-color: transparent;
   background-size: 100% 100%;
   background-repeat: no-repeat;
   border: none;
@@ -24,6 +25,10 @@
 
 .mainSlot.focused {
   background-image: url('/pokemon-assets/main_slot_hovered.png');
+  width: 294px;
+  height: 138px;
+  left: 5px;
+  top: 42px;
 }
 
 .mainName {
@@ -61,10 +66,11 @@
 /* ── Side slots (right column) ── */
 .slot {
   position: absolute;
-  left: 292px;
-  width: 514px;
-  height: 54px;
+  left: 304px;
+  width: 522px;
+  height: 52.5px;
   background-image: url('/pokemon-assets/slot.png');
+  background-color: transparent;
   background-size: 100% 100%;
   background-repeat: no-repeat;
   border: none;

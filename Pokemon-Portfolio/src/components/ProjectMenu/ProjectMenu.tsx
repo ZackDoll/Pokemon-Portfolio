@@ -76,7 +76,7 @@ export default function ProjectMenu({ phase, dispatch }: Props) {
         <button
           key={project.id}
           className={`${styles.slot} ${focusIndex === i + 1 ? styles.focused : ''}`}
-          style={{ top: 20 + i * 62 + 'px' }}
+          style={{ top: 24.5 + i * 57.5 + 'px' }}
           onClick={() => selectProject(project.id)}
           onMouseEnter={() => setFocusIndex(i + 1)}
         />
