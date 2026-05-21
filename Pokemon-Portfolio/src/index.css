@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 :root {
   --pokemon-white: #f8f8f8;
   --pokemon-black: #181818;
@@ -17,6 +19,9 @@
   box-sizing: border-box;
   image-rendering: pixelated;
   image-rendering: crisp-edges;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: never;
 }
 
 html,
@@ -27,9 +32,6 @@ body {
   height: 100%;
   background: #000;
   font-family: var(--font-pixel);
-  -webkit-font-smoothing: none;
-  -moz-osx-font-smoothing: none;
-  font-smooth: never;
 }
 
 #root {
