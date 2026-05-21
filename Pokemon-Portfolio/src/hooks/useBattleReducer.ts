@@ -85,6 +85,9 @@ function battleReducer(state: BattleState, action: BattleAction): BattleState {
       }
     }
 
+    case 'RESET':
+      return { ...INITIAL_STATE }
+
     default:
       return state
   }

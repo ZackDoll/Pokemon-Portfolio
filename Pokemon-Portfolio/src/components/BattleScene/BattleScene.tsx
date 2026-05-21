@@ -70,6 +70,16 @@ export default function BattleScene({ state, dispatch }: Props) {
 
       {/* Intro overlay */}
       <BattleIntro phase={state.phase} dispatch={dispatch} />
+
+      {/* Restart button */}
+      <button
+        className={styles.restartBtn}
+        onClick={() => dispatch({ type: 'RESET' })}
+        title="Restart battle"
+        aria-label="Restart battle"
+      >
+        ↺
+      </button>
     </div>
   )
 }

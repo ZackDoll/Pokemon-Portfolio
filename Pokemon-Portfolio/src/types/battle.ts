@@ -47,3 +47,4 @@ export type BattleAction =
   | { type: 'HP_DRAIN_COMPLETE' }
   | { type: 'TYPEWRITER_COMPLETE' }
   | { type: 'ADVANCE_DIALOGUE' }
+  | { type: 'RESET' }
