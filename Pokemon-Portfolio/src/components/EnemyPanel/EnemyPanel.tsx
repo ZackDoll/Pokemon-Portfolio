@@ -33,7 +33,10 @@ export default function EnemyPanel({ hp, hpMax, name, level, phase, dispatch }: 
 
   return (
     <div className={`${styles.panel} ${flashing ? styles.flashing : ''}`}>
-      <span className={styles.name}>{name}</span>
+      <span className={styles.name}>
+        {name}
+        <img src="/pokemon-assets/male_symbol.png" className={styles.genderIcon} alt="" />
+      </span>
       <span className={styles.level}>Lv{level}</span>
     </div>
   )

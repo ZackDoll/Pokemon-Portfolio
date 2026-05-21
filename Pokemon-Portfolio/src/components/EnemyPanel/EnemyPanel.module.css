@@ -11,19 +11,31 @@
 
 .name {
   position: absolute;
-  top: 10px;
-  left: 14px;
+  top: 14px;
+  left: 16px;
   font-family: var(--font-pixel);
-  font-size: 16px;
+  font-size: 18px;
   color: var(--pokemon-black);
   white-space: nowrap;
   text-shadow: 1px 1px 0 rgba(136, 120, 152, 0.9);
 }
 
+.genderIcon {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-left: -2px;
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+  left: -1px;
+  image-rendering: pixelated;
+}
+
 .level {
   position: absolute;
   top: 14px;
-  left: 160px;
+  left: 140px;
   font-family: var(--font-pixel);
   font-size: 18px;
   color: var(--pokemon-black);
