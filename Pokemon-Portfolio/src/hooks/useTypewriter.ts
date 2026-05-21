@@ -1,34 +1,34 @@
-import { useState, useEffect, useRef, useCallback } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 
 export function useTypewriter(text: string, active: boolean, speedMs = 40) {
+  const [prevText, setPrevText] = useState(text)
   const [index, setIndex] = useState(0)
-  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
-  useEffect(() => {
+  // Reset index synchronously when text changes so no intermediate render
+  // paints new text at the old cursor position (flash of unintended text).
+  if (prevText !== text) {
+    setPrevText(text)
     setIndex(0)
-  }, [text, active])
+  }
+
+  const effectiveIndex = prevText === text ? index : 0
 
   useEffect(() => {
-    if (!active || index >= text.length) return
+    if (!active || effectiveIndex >= text.length) return
 
-    const char = text[index]
+    const char = text[effectiveIndex]
     const delay =
       char === '.' || char === '!' || char === '?' ? speedMs * 5 : speedMs
 
-    timeoutRef.current = setTimeout(() => {
-      setIndex((i) => i + 1)
-    }, delay)
-
-    return () => {
-      if (timeoutRef.current) clearTimeout(timeoutRef.current)
-    }
-  }, [active, index, text, speedMs])
+    const id = setTimeout(() => setIndex((i) => i + 1), delay)
+    return () => clearTimeout(id)
+  }, [active, effectiveIndex, text, speedMs])
 
   const skip = useCallback(() => setIndex(text.length), [text.length])
 
   return {
-    displayedText: text.slice(0, index),
-    complete: active && index >= text.length,
+    displayedText: text.slice(0, effectiveIndex),
+    complete: active && effectiveIndex >= text.length,
     skip,
   }
 }
