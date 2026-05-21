@@ -8,12 +8,6 @@ interface Props {
   dispatch: React.Dispatch<BattleAction>
 }
 
-function hpColor(hp: number, hpMax: number): string {
-  const pct = hp / hpMax
-  if (pct > 0.5) return 'var(--pokemon-hp-green)'
-  if (pct > 0.2) return 'var(--pokemon-hp-yellow)'
-  return 'var(--pokemon-hp-red)'
-}
 
 export default function ProjectMenu({ phase, dispatch }: Props) {
   const [focusIndex, setFocusIndex] = useState(0)
@@ -67,6 +61,7 @@ export default function ProjectMenu({ phase, dispatch }: Props) {
   const sideProjects = PROJECTS.slice(1, 6)
   const focused = PROJECTS[focusIndex]
 
+
   return (
     <div className={styles.overlay}>
       {/* Main slot (index 0) */}
@@ -74,17 +69,7 @@ export default function ProjectMenu({ phase, dispatch }: Props) {
         className={`${styles.mainSlot} ${focusIndex === 0 ? styles.focused : ''}`}
         onClick={() => selectProject(mainProject.id)}
         onMouseEnter={() => setFocusIndex(0)}
-      >
-        <span className={styles.mainName}>{mainProject.name}</span>
-        <span className={styles.mainLevel}>{mainProject.level}</span>
-        <div
-          className={styles.mainHpFill}
-          style={{
-            width: `${(mainProject.hp / mainProject.hpMax) * 100}%`,
-            background: hpColor(mainProject.hp, mainProject.hpMax),
-          }}
-        />
-      </button>
+      />
 
       {/* Side slots (indices 1–5) */}
       {sideProjects.map((project, i) => (
@@ -94,17 +79,7 @@ export default function ProjectMenu({ phase, dispatch }: Props) {
           style={{ top: 20 + i * 62 + 'px' }}
           onClick={() => selectProject(project.id)}
           onMouseEnter={() => setFocusIndex(i + 1)}
-        >
-          <span className={styles.slotName}>{project.name}</span>
-          <span className={styles.slotLevel}>{project.level}</span>
-          <div
-            className={styles.slotHpFill}
-            style={{
-              width: `${(project.hp / project.hpMax) * 100}%`,
-              background: hpColor(project.hp, project.hpMax),
-            }}
-          />
-        </button>
+        />
       ))}
 
       {/* Info bar — shows focused project tagline */}
