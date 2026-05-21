@@ -3,57 +3,47 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
-.header {
-  font-family: var(--font-pixel);
-  font-size: 7px;
-  color: var(--pokemon-black);
-  padding: 4px 8px;
-  border-bottom: 2px solid var(--pokemon-black);
-  background: #d8d0a0;
-}
-
-.grid {
+/* options.png covers the right half (the FIGHT/BAG/POKéMON/RUN box) */
+.optionsBox {
   flex: 1;
+  background-image: url('/pokemon-assets/options.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
+  padding: 8px 10px;
+  gap: 2px;
 }
 
 .moveBtn {
-  background: var(--pokemon-panel-bg);
+  background: none;
   border: none;
-  border-right: 2px solid var(--pokemon-black);
-  border-bottom: 2px solid var(--pokemon-black);
-  padding: 6px 8px;
+  padding: 2px 4px;
   cursor: pointer;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
+  gap: 4px;
   text-align: left;
   font-family: var(--font-pixel);
-  transition: background 0.1s;
+  position: relative;
 }
 
-.moveBtn:nth-child(2),
-.moveBtn:nth-child(4) {
-  border-right: none;
+.arrow {
+  width: 8px;
+  height: 13px;
+  background-image: url('/pokemon-assets/arrow_selector.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  flex-shrink: 0;
+  visibility: hidden;
 }
 
-.moveBtn:nth-child(3),
-.moveBtn:nth-child(4) {
-  border-bottom: none;
-}
-
-.moveBtn:hover:not(.used) {
-  background: #f0e8c0;
-}
-
-.moveBtn.focused {
-  background: #f8f0d0;
-  outline: 2px solid var(--pokemon-black);
-  outline-offset: -2px;
+.moveBtn.focused .arrow {
+  visibility: visible;
 }
 
 .moveName {
@@ -62,23 +52,33 @@
   letter-spacing: 0;
 }
 
-.moveFooter {
+.used .moveName {
+  color: #888;
+}
+
+/* move_inspect.png sits below as a detail panel — hidden for now, shown on hover */
+.inspectBox {
+  height: 51px;
+  background-image: url('/pokemon-assets/move_inspect.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 6px 10px;
+  gap: 2px;
+}
+
+.ppRow {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  font-family: var(--font-pixel);
+  font-size: 6px;
+  color: var(--pokemon-black);
 }
 
-.pp {
-  font-size: 5px;
-  color: #606060;
-}
-
-.used .moveName,
-.used .pp {
-  color: #a0a0a0;
-}
-
-.used {
-  background: #d0c8a0;
-  cursor: default;
+.typeRow {
+  font-family: var(--font-pixel);
+  font-size: 6px;
+  color: var(--pokemon-black);
 }

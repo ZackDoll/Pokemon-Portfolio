@@ -1,6 +1,5 @@
 import { useState, useEffect, useCallback } from 'react'
 import type { Move, BattlePhase, BattleAction } from '../../types/battle'
-import TypeBadge from '../TypeBadge/TypeBadge'
 import styles from './MoveMenu.module.css'
 
 interface Props {
@@ -12,28 +11,22 @@ interface Props {
 export default function MoveMenu({ moves, phase, dispatch }: Props) {
   const [focusIndex, setFocusIndex] = useState(0)
   const isVisible = phase === 'move_select'
+  const focused = moves[focusIndex]
 
   const selectMove = useCallback(
-    (id: string) => {
-      dispatch({ type: 'SELECT_MOVE', moveId: id })
-    },
+    (id: string) => dispatch({ type: 'SELECT_MOVE', moveId: id }),
     [dispatch]
   )
 
   useEffect(() => {
     if (!isVisible) return
-
     function onKey(e: KeyboardEvent) {
       if (e.code === 'ArrowRight') setFocusIndex((i) => (i % 2 === 0 ? i + 1 : i))
       if (e.code === 'ArrowLeft')  setFocusIndex((i) => (i % 2 === 1 ? i - 1 : i))
       if (e.code === 'ArrowDown')  setFocusIndex((i) => (i < 2 ? i + 2 : i))
       if (e.code === 'ArrowUp')    setFocusIndex((i) => (i >= 2 ? i - 2 : i))
-      if (e.code === 'Enter' || e.code === 'KeyZ') {
-        selectMove(moves[focusIndex].id)
-      }
-      if (e.code === 'Escape' || e.code === 'KeyX') {
-        dispatch({ type: 'INTRO_COMPLETE' }) // reuse to go back to idle
-      }
+      if (e.code === 'Enter' || e.code === 'KeyZ') selectMove(moves[focusIndex].id)
+      if (e.code === 'Escape' || e.code === 'KeyX') dispatch({ type: 'INTRO_COMPLETE' })
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
@@ -43,24 +36,25 @@ export default function MoveMenu({ moves, phase, dispatch }: Props) {
 
   return (
     <div className={styles.container}>
-      <div className={styles.header}>What will TRAINER do?</div>
-      <div className={styles.grid}>
+      <div className={styles.optionsBox}>
         {moves.map((move, i) => (
           <button
             key={move.id}
-            className={`${styles.moveBtn} ${move.used ? styles.used : ''} ${i === focusIndex ? styles.focused : ''}`}
+            className={`${styles.moveBtn} ${i === focusIndex ? styles.focused : ''} ${move.used ? styles.used : ''}`}
             onClick={() => selectMove(move.id)}
             onMouseEnter={() => setFocusIndex(i)}
           >
+            <span className={styles.arrow} />
             <span className={styles.moveName}>{move.name}</span>
-            <div className={styles.moveFooter}>
-              <TypeBadge type={move.type} />
-              <span className={styles.pp}>
-                PP {move.pp}/{move.ppMax}
-              </span>
-            </div>
           </button>
         ))}
+      </div>
+      <div className={styles.inspectBox}>
+        <div className={styles.ppRow}>
+          <span>PP</span>
+          <span>{focused.pp}/{focused.ppMax}</span>
+        </div>
+        <div className={styles.typeRow}>TYPE/ {focused.type}</div>
       </div>
     </div>
   )

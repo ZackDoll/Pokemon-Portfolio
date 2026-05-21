@@ -2,36 +2,35 @@
   position: absolute;
   bottom: 8px;
   right: 16px;
-  background: #e8dfa0;
-  border-top: 2px solid #404040;
-  border-left: 2px solid #404040;
-  border-right: 4px solid #181818;
-  border-bottom: 4px solid #181818;
-  padding: 3px 6px 4px 6px;
-  min-width: 140px;
+  width: 111px;
+  height: 42px;
+  background-image: url('/pokemon-assets/player_hp.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  padding: 4px 6px 4px 6px;
 }
 
 .nameRow {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-bottom: 3px;
+  margin-bottom: 2px;
 }
 
 .name {
   font-family: var(--font-pixel);
-  font-size: 8px;
+  font-size: 6px;
   color: var(--pokemon-black);
 }
 
 .level {
   font-family: var(--font-pixel);
-  font-size: 7px;
+  font-size: 6px;
   color: var(--pokemon-black);
 }
 
 .expBar {
-  margin-top: 4px;
+  margin-top: 3px;
   height: 3px;
   background: #3878f8;
   width: 60%;
