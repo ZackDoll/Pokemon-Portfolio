@@ -8,7 +8,7 @@ interface Props {
 }
 
 // Total intro duration: stripe delay (0.4s) + stripe duration (0.7s) = 1.1s
-const INTRO_DURATION_MS = 1800
+const INTRO_DURATION_MS = 2700
 
 export default function BattleIntro({ phase, dispatch }: Props) {
   useEffect(() => {
