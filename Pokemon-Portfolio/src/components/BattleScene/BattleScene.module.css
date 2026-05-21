@@ -10,10 +10,15 @@
   position: relative;
   width: 832px;
   height: 288px;
-  background-image: url('/pokemon-assets/DS _ DSi - Pokemon Diamond _ Pearl - Backgrounds - Battle Backgrounds.png');
-  background-repeat: no-repeat;
-  background-size: 832px auto;
-  background-position: 0 0;
+  /* PLACEHOLDER — was: Diamond/Pearl battle background sprite */
+  background: linear-gradient(
+    to bottom,
+    #78c8f8 0%,
+    #b8e0f8 40%,
+    #b8e0f8 55%,
+    #70a840 55%,
+    #508030 100%
+  );
   overflow: hidden;
 }
 
@@ -24,10 +29,9 @@
   right: 80px;
   width: 140px;
   height: 28px;
-  background-image: url('/pokemon-assets/Game Boy Advance - Pokemon Ruby _ Sapphire - Battle Effects - Battle Arenas.png');
-  background-repeat: no-repeat;
-  background-size: 480px auto;
-  background-position: 0 -12px;
+  /* PLACEHOLDER — was: Ruby/Sapphire grass arena platform oval (enemy side) */
+  background: radial-gradient(ellipse at center, #3a6e28 0%, #2a5018 60%, transparent 100%);
+  border-radius: 50%;
   opacity: 0.85;
 }
 
@@ -38,10 +42,9 @@
   left: 80px;
   width: 180px;
   height: 36px;
-  background-image: url('/pokemon-assets/Game Boy Advance - Pokemon Ruby _ Sapphire - Battle Effects - Battle Arenas.png');
-  background-repeat: no-repeat;
-  background-size: 480px auto;
-  background-position: 0 -78px;
+  /* PLACEHOLDER — was: Ruby/Sapphire grass arena platform oval (player side) */
+  background: radial-gradient(ellipse at center, #4a8e38 0%, #3a6e28 60%, transparent 100%);
+  border-radius: 50%;
   opacity: 0.85;
 }
 
