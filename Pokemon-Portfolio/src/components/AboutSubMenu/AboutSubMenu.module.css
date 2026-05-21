@@ -1,23 +1,33 @@
-.container {
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 832px;
+  height: 120px;
+  z-index: 20;
+  user-select: none;
+}
+
+.bgImg {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  background-image: url('/pokemon-assets/options_background.png');
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  pointer-events: auto;
+  display: block;
 }
 
 .optionsBox {
-  flex: 1;
+  position: absolute;
+  right: 300px;
+  top: 0;
+  bottom: 0;
+  width: 500px;
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: auto auto;
   align-content: center;
-  padding: 10px 10px 10px 30px;
-  gap: 6px 16px;
+  padding: 10px 4px 10px 4px;
+  gap: 6px 100px;
 }
 
 .moveBtn {
@@ -32,6 +42,7 @@
   font-family: var(--font-pixel);
   position: relative;
   user-select: none;
+  pointer-events: auto;
 }
 
 .arrow {

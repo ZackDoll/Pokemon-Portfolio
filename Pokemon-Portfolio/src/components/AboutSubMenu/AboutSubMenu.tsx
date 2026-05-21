@@ -39,7 +39,8 @@ export default function AboutSubMenu({ phase, dispatch }: Props) {
   if (!isVisible) return null
 
   return (
-    <div className={styles.container}>
+    <div className={styles.overlay}>
+      <img src="/pokemon-assets/move_inspect.png" className={styles.bgImg} alt="" draggable={false} />
       <div className={styles.optionsBox}>
         {ABOUT_SUBMOVES.map((move, i) => (
           <button

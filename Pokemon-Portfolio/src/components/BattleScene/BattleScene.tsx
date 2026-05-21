@@ -65,7 +65,6 @@ export default function BattleScene({ state, dispatch }: Props) {
             phase={state.phase}
             dispatch={dispatch}
           />
-          <AboutSubMenu phase={state.phase} dispatch={dispatch} />
         </div>
       </div>
 
@@ -74,6 +73,9 @@ export default function BattleScene({ state, dispatch }: Props) {
 
       {/* Project party menu */}
       <ProjectMenu phase={state.phase} dispatch={dispatch} />
+
+      {/* About sub-menu */}
+      <AboutSubMenu phase={state.phase} dispatch={dispatch} />
 
       {/* Restart button */}
       <button
