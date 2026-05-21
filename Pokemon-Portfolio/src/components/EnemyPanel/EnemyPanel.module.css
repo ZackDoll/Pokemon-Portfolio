@@ -2,18 +2,20 @@
   position: absolute;
   top: 16px;
   left: 16px;
-  width: 200px;
-  background: var(--pokemon-panel-bg);
-  border: 3px solid var(--pokemon-panel-border);
-  padding: 6px 8px;
-  box-shadow: 3px 3px 0 var(--pokemon-shadow);
+  background: #e8dfa0;
+  border-top: 2px solid #404040;
+  border-left: 2px solid #404040;
+  border-right: 4px solid #181818;
+  border-bottom: 4px solid #181818;
+  padding: 3px 6px 4px 6px;
+  min-width: 140px;
 }
 
 .nameRow {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 }
 
 .name {
@@ -29,7 +31,6 @@
   color: var(--pokemon-black);
 }
 
-/* Flash animation during attack */
 .flashing {
   animation: attackFlash 0.5s ease;
 }
