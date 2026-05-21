@@ -9,7 +9,7 @@
 .battleArea {
   position: relative;
   width: 832px;
-  height: 288px;
+  height: 264px;
   background-image: url('/pokemon-assets/battle_background_full.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -53,9 +53,7 @@
 .uiBar {
   position: relative;
   width: 832px;
-  height: 96px;
-  background: var(--pokemon-white);
-  border-top: 3px solid var(--pokemon-black);
+  height: 120px;
   display: flex;
 }
 
@@ -70,7 +68,7 @@
   position: absolute;
   right: 0;
   top: 0;
-  width: 320px;
+  width: 416px;
   height: 100%;
   z-index: 5;
   display: flex;
