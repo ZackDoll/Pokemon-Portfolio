@@ -25,10 +25,10 @@
 
 .cursor {
   position: absolute;
-  bottom: 8px;
-  right: 12px;
-  width: 17px;
-  height: 20px;
+  bottom: 20px;
+  right: 40px;
+  width: 30px;
+  height: 36px;
   background-image: url('/pokemon-assets/next_icon.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;

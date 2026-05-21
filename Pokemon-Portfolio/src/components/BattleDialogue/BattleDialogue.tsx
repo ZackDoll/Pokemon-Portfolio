@@ -78,7 +78,7 @@ export default function BattleDialogue({ text, complete, phase, dispatch }: Prop
   if (phase === 'move_select') {
     return (
       <div className={styles.box}>
-        <pre className={styles.text}>{displayedText || text}</pre>
+        <pre className={styles.text}>{displayedText}</pre>
       </div>
     )
   }
@@ -89,7 +89,7 @@ export default function BattleDialogue({ text, complete, phase, dispatch }: Prop
     <div className={styles.box} onClick={advance}>
       <pre className={styles.text}>{displayedText}</pre>
       {(complete || (isFainted && typeComplete)) && (
-        <span className={styles.cursor}>▼</span>
+        <span className={styles.cursor} />
       )}
     </div>
   )
