@@ -10,37 +10,10 @@
   position: relative;
   width: 832px;
   height: 288px;
-  background-image: url('/pokemon-assets/day_battle_background.png');
-  background-size: cover;
-  background-position: center;
+  background-image: url('/pokemon-assets/battle_background_full.png');
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   overflow: hidden;
-}
-
-/* Enemy platform oval — upper right area */
-.enemyPlatform {
-  position: absolute;
-  bottom: 68px;
-  right: 80px;
-  width: 140px;
-  height: 28px;
-  /* PLACEHOLDER — was: Ruby/Sapphire grass arena platform oval (enemy side) */
-  background: radial-gradient(ellipse at center, #3a6e28 0%, #2a5018 60%, transparent 100%);
-  border-radius: 50%;
-  opacity: 0.85;
-}
-
-/* Player platform oval — lower left area */
-.playerPlatform {
-  position: absolute;
-  bottom: 16px;
-  left: 80px;
-  width: 180px;
-  height: 36px;
-  /* PLACEHOLDER — was: Ruby/Sapphire grass arena platform oval (player side) */
-  background: radial-gradient(ellipse at center, #4a8e38 0%, #3a6e28 60%, transparent 100%);
-  border-radius: 50%;
-  opacity: 0.85;
 }
 
 /* Placeholder sprite positions — replaced by real sprites later */

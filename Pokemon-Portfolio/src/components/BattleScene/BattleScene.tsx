@@ -45,8 +45,6 @@ export default function BattleScene({ state, dispatch }: Props) {
           name="TRAINER"
           level={99}
         />
-        <div className={styles.enemyPlatform} />
-        <div className={styles.playerPlatform} />
         <div className={styles.enemySprite}>ZACK</div>
         <div className={styles.playerSprite}>YOU</div>
       </div>
