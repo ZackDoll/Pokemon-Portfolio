@@ -26,7 +26,6 @@ export default function BattleIntro({ phase, dispatch }: Props) {
         <div className={styles.barTop} />
         <div className={styles.barBottom} />
         <div className={styles.flash} />
-        <div className={styles.stripe} />
       </div>
     </>
   )
