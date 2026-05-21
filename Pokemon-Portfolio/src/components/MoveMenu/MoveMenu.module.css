@@ -4,14 +4,13 @@
   display: flex;
   flex-direction: column;
   position: relative;
-}
-
-/* options.png covers the right half (the FIGHT/BAG/POKéMON/RUN box) */
-.optionsBox {
-  flex: 1;
-  background-image: url('/pokemon-assets/options.png');
+  background-image: url('/pokemon-assets/options_background.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
+}
+
+.optionsBox {
+  flex: 1;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
@@ -57,12 +56,8 @@
   color: #888;
 }
 
-/* move_inspect.png sits below as a detail panel — hidden for now, shown on hover */
 .inspectBox {
   height: 51px;
-  background-image: url('/pokemon-assets/move_inspect.png');
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
