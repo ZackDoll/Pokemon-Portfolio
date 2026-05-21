@@ -2,12 +2,12 @@
   position: absolute;
   top: 16px;
   left: 16px;
-  width: 106px;
-  height: 39px;
+  width: 200px;
+  height: 74px;
   background-image: url('/pokemon-assets/enemy_hp.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  padding: 4px 6px 4px 6px;
+  padding: 22px 10px 6px 10px;
 }
 
 .nameRow {
@@ -19,14 +19,14 @@
 
 .name {
   font-family: var(--font-pixel);
-  font-size: 6px;
+  font-size: 9px;
   color: var(--pokemon-black);
   letter-spacing: 0;
 }
 
 .level {
   font-family: var(--font-pixel);
-  font-size: 6px;
+  font-size: 9px;
   color: var(--pokemon-black);
 }
 

@@ -1,7 +1,6 @@
 import { useEffect, useState, useCallback } from 'react'
 import type { BattlePhase, BattleAction } from '../../types/battle'
 import { useHpAnimation } from '../../hooks/useHpAnimation'
-import HpBar from '../HpBar/HpBar'
 import styles from './EnemyPanel.module.css'
 
 interface Props {
@@ -38,7 +37,6 @@ export default function EnemyPanel({ hp, hpMax, name, level, phase, dispatch }: 
         <span className={styles.name}>{name}</span>
         <span className={styles.level}>Lv{level}</span>
       </div>
-      <HpBar current={displayHp} max={hpMax} />
     </div>
   )
 }

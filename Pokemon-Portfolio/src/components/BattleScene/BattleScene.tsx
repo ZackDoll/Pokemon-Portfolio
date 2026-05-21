@@ -40,8 +40,6 @@ export default function BattleScene({ state, dispatch }: Props) {
           dispatch={dispatch}
         />
         <PlayerPanel
-          hp={state.playerHp}
-          hpMax={state.playerHpMax}
           name="TRAINER"
           level={99}
         />
