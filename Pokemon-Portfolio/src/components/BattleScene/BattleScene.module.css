@@ -52,6 +52,7 @@
 /* UI bar at the bottom */
 .uiBar {
   position: relative;
+  z-index: 5;
   width: 832px;
   height: 120px;
   display: flex;

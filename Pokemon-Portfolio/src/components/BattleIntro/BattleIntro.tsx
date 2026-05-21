@@ -8,7 +8,7 @@ interface Props {
 }
 
 // Total intro duration: stripe delay (0.4s) + stripe duration (0.7s) = 1.1s
-const INTRO_DURATION_MS = 1200
+const INTRO_DURATION_MS = 1800
 
 export default function BattleIntro({ phase, dispatch }: Props) {
   useEffect(() => {
@@ -20,12 +20,14 @@ export default function BattleIntro({ phase, dispatch }: Props) {
   if (phase !== 'intro') return null
 
   return (
-    <div className={styles.overlay}>
-      <div className={styles.barTop} />
-      <div className={styles.barBottom} />
-      <div className={styles.flash} />
+    <>
       <div className={styles.terrain} />
-      <div className={styles.stripe} />
-    </div>
+      <div className={styles.overlay}>
+        <div className={styles.barTop} />
+        <div className={styles.barBottom} />
+        <div className={styles.flash} />
+        <div className={styles.stripe} />
+      </div>
+    </>
   )
 }
