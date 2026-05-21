@@ -65,7 +65,7 @@ export const INITIAL_MOVES: Move[] = [
 
 export const ENEMY_POKEMON = {
   name: 'ZACK',
-  level: 26,
+  level: 21,
   hpMax: 100,
 }
 

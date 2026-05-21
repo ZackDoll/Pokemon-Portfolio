@@ -35,7 +35,7 @@ export default function BattleScene({ state, dispatch }: Props) {
           hp={state.enemyHp}
           hpMax={state.enemyHpMax}
           name="ZACK"
-          level={26}
+          level={21}
           phase={state.phase}
           dispatch={dispatch}
         />
