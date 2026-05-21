@@ -25,7 +25,7 @@ export default function BattleDialogue({ text, complete, phase, dispatch }: Prop
   const activeText = isFainted ? faintedText : text
   const isActive = phase === 'dialogue' || phase === 'idle' || phase === 'move_select' || phase === 'animating' || isFainted
 
-  const { displayedText, complete: typeComplete } = useTypewriter(
+  const { displayedText, complete: typeComplete, skip } = useTypewriter(
     activeText,
     isActive && activeText.length > 0,
     40
@@ -39,7 +39,7 @@ export default function BattleDialogue({ text, complete, phase, dispatch }: Prop
 
   const advance = useCallback(() => {
     if (isFainted) {
-      if (!typeComplete) return
+      if (!typeComplete) { skip(); return }
       if (faintedStep < FAINTED_SEQUENCE.length - 1) {
         setFaintedStep((s) => s + 1)
       } else {
@@ -47,8 +47,9 @@ export default function BattleDialogue({ text, complete, phase, dispatch }: Prop
       }
       return
     }
+    if (!typeComplete) { skip(); return }
     if (complete) dispatch({ type: 'ADVANCE_DIALOGUE' })
-  }, [complete, isFainted, typeComplete, faintedStep, dispatch])
+  }, [complete, isFainted, typeComplete, faintedStep, dispatch, skip])
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {

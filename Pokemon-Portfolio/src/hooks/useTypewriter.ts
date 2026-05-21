@@ -1,10 +1,9 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 
 export function useTypewriter(text: string, active: boolean, speedMs = 40) {
   const [index, setIndex] = useState(0)
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
-  // Reset when text or active changes
   useEffect(() => {
     setIndex(0)
   }, [text, active])
@@ -13,7 +12,6 @@ export function useTypewriter(text: string, active: boolean, speedMs = 40) {
     if (!active || index >= text.length) return
 
     const char = text[index]
-    // Pause longer on sentence-ending punctuation
     const delay =
       char === '.' || char === '!' || char === '?' ? speedMs * 5 : speedMs
 
@@ -26,8 +24,11 @@ export function useTypewriter(text: string, active: boolean, speedMs = 40) {
     }
   }, [active, index, text, speedMs])
 
+  const skip = useCallback(() => setIndex(text.length), [text.length])
+
   return {
     displayedText: text.slice(0, index),
     complete: active && index >= text.length,
+    skip,
   }
 }
