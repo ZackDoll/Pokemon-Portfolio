@@ -9,7 +9,7 @@ export default function PlayerPanel({ name, level }: Props) {
   return (
     <div className={styles.panel}>
       <span className={styles.name}>{name}</span>
-      <span className={styles.level}>{level}</span>
+      <span className={styles.level}>Lv{level}</span>
     </div>
   )
 }
