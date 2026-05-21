@@ -52,20 +52,22 @@
 .terrain {
   position: absolute;
   z-index: 3;
-  bottom: 112px;
-  left: 0;
-  width: 100%;
-  height: 56px;
+  bottom: 80px;
+  left: -50%;
+  width: 300%;
+  height: 200px;
   background-image: url('/pokemon-assets/battle_intro_terrain.png');
   background-repeat: repeat-x;
   background-size: auto 100%;
   background-position: left center;
-  animation: terrainSlide 2.2s linear 0.3s both;
+  animation: terrainSlide 3.0s linear 0.1s both;
 }
 
 @keyframes terrainSlide {
-  0%   { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
+  0%   { transform: translateX(0) translateY(0); animation-timing-function: linear; }
+  50%  { transform: translateX(-240px) translateY(0); animation-timing-function: linear; }
+  75%  { transform: translateX(-400px) translateY(165px); animation-timing-function: ease-out; }
+  100% { transform: translateX(-400px) translateY(165px); }
 }
 
 /* Black bars that part to reveal the battle (cinematic reveal) */
