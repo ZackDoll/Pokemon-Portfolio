@@ -23,7 +23,7 @@ export default function BattleDialogue({ text, complete, phase, dispatch }: Prop
   const isFainted = phase === 'fainted'
   const faintedText = FAINTED_SEQUENCE[faintedStep] ?? ''
   const activeText = isFainted ? faintedText : text
-  const isActive = phase === 'dialogue' || phase === 'idle' || phase === 'animating' || isFainted
+  const isActive = phase === 'dialogue' || phase === 'idle' || phase === 'move_select' || phase === 'animating' || isFainted
 
   const { displayedText, complete: typeComplete } = useTypewriter(
     activeText,
@@ -74,19 +74,11 @@ export default function BattleDialogue({ text, complete, phase, dispatch }: Prop
     )
   }
 
-  // Idle phase — show prompt + FIGHT button
-  if (phase === 'idle') {
+  // Move select phase — show "What will RECRUITER do?" without advance cursor
+  if (phase === 'move_select') {
     return (
       <div className={styles.box}>
         <pre className={styles.text}>{displayedText || text}</pre>
-        {(complete || !text) && (
-          <button
-            className={styles.fightBtn}
-            onClick={() => dispatch({ type: 'OPEN_MOVE_MENU' })}
-          >
-            ▶ FIGHT
-          </button>
-        )}
       </div>
     )
   }

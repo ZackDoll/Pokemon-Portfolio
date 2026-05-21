@@ -25,7 +25,6 @@ export default function MoveMenu({ moves, phase, dispatch }: Props) {
       if (e.code === 'ArrowDown')  setFocusIndex((i) => (i < 2 ? i + 2 : i))
       if (e.code === 'ArrowUp')    setFocusIndex((i) => (i >= 2 ? i - 2 : i))
       if (e.code === 'Enter' || e.code === 'KeyZ') selectMove(moves[focusIndex].id)
-      if (e.code === 'Escape' || e.code === 'KeyX') dispatch({ type: 'INTRO_COMPLETE' })
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)

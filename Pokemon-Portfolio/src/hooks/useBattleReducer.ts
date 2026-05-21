@@ -7,14 +7,10 @@ function battleReducer(state: BattleState, action: BattleAction): BattleState {
     case 'INTRO_COMPLETE':
       return {
         ...state,
-        phase: 'idle',
-        currentDialogue: 'What will\nTRAINER do?',
+        phase: 'dialogue',
+        currentDialogue: 'A wild ZACHARY DOLL appeared!',
         dialogueComplete: false,
       }
-
-    case 'OPEN_MOVE_MENU':
-      if (state.phase !== 'idle') return state
-      return { ...state, phase: 'move_select', currentDialogue: '' }
 
     case 'SELECT_MOVE': {
       if (state.phase !== 'move_select') return state
@@ -78,9 +74,9 @@ function battleReducer(state: BattleState, action: BattleAction): BattleState {
 
       return {
         ...state,
-        phase: 'idle',
+        phase: 'move_select',
         activeMove: null,
-        currentDialogue: 'What will\nTRAINER do?',
+        currentDialogue: 'What will\nRECRUITER do?',
         dialogueComplete: false,
       }
     }
