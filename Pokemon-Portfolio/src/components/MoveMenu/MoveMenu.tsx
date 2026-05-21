@@ -11,7 +11,6 @@ interface Props {
 export default function MoveMenu({ moves, phase, dispatch }: Props) {
   const [focusIndex, setFocusIndex] = useState(0)
   const isVisible = phase === 'move_select'
-  const focused = moves[focusIndex]
 
   const selectMove = useCallback(
     (id: string) => dispatch({ type: 'SELECT_MOVE', moveId: id }),
@@ -48,13 +47,6 @@ export default function MoveMenu({ moves, phase, dispatch }: Props) {
             <span className={styles.moveName}>{move.name}</span>
           </button>
         ))}
-      </div>
-      <div className={styles.inspectBox}>
-        <div className={styles.ppRow}>
-          <span>PP</span>
-          <span>{focused.pp}/{focused.ppMax}</span>
-        </div>
-        <div className={styles.typeRow}>TYPE/ {focused.type}</div>
       </div>
     </div>
   )
