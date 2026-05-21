@@ -2,6 +2,7 @@ export type BattlePhase =
   | 'intro'
   | 'idle'
   | 'move_select'
+  | 'about_submenu'
   | 'project_menu'
   | 'animating'
   | 'dialogue'
@@ -26,6 +27,7 @@ export interface Move {
   damage: number
   used: boolean
   dialogueLines: string[]
+  downloadUrl?: string
 }
 
 export interface BattleState {
@@ -57,6 +59,8 @@ export type BattleAction =
   | { type: 'SELECT_MOVE'; moveId: string }
   | { type: 'SELECT_PROJECT'; projectId: string }
   | { type: 'CLOSE_PROJECT_MENU' }
+  | { type: 'SELECT_SUBMOVE'; submoveId: string }
+  | { type: 'CLOSE_ABOUT_SUBMENU' }
   | { type: 'HP_DRAIN_COMPLETE' }
   | { type: 'TYPEWRITER_COMPLETE' }
   | { type: 'ADVANCE_DIALOGUE' }

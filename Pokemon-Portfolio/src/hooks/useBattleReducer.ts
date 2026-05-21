@@ -1,6 +1,6 @@
 import { useReducer } from 'react'
 import type { BattleState, BattleAction } from '../types/battle'
-import { INITIAL_STATE, PROJECTS } from '../data/battleData'
+import { INITIAL_STATE, PROJECTS, ABOUT_SUBMOVES } from '../data/battleData'
 
 function battleReducer(state: BattleState, action: BattleAction): BattleState {
   switch (action.type) {
@@ -17,7 +17,10 @@ function battleReducer(state: BattleState, action: BattleAction): BattleState {
       const move = state.moves.find((m) => m.id === action.moveId)
       if (!move) return state
 
-      // Projects move opens the party menu instead of attacking directly
+      // About and Projects moves open sub-menus instead of attacking directly
+      if (move.id === 'about') {
+        return { ...state, phase: 'about_submenu' }
+      }
       if (move.id === 'projects') {
         return { ...state, phase: 'project_menu' }
       }
@@ -74,6 +77,47 @@ function battleReducer(state: BattleState, action: BattleAction): BattleState {
     }
 
     case 'CLOSE_PROJECT_MENU':
+      return {
+        ...state,
+        phase: 'move_select',
+        currentDialogue: 'What will\nRECRUITER do?',
+        dialogueComplete: false,
+      }
+
+    case 'SELECT_SUBMOVE': {
+      if (state.phase !== 'about_submenu') return state
+      const submove = ABOUT_SUBMOVES.find((m) => m.id === action.submoveId)
+      if (!submove) return state
+      const aboutMove = state.moves.find((m) => m.id === 'about')
+      if (!aboutMove) return state
+
+      if (aboutMove.used) {
+        return {
+          ...state,
+          phase: 'dialogue',
+          currentDialogue: submove.dialogueLines[0] ?? '',
+          dialogueQueue: submove.dialogueLines.slice(1),
+          dialogueComplete: false,
+        }
+      }
+
+      const updatedMoves = state.moves.map((m) =>
+        m.id === 'about' ? { ...m, used: true, pp: 0 } : m
+      )
+      const newHp = Math.max(0, state.enemyHp - aboutMove.damage)
+      return {
+        ...state,
+        phase: 'animating',
+        activeMove: 'about',
+        enemyHp: newHp,
+        moves: updatedMoves,
+        dialogueQueue: submove.dialogueLines.slice(1),
+        currentDialogue: submove.dialogueLines[0] ?? '',
+        dialogueComplete: false,
+      }
+    }
+
+    case 'CLOSE_ABOUT_SUBMENU':
       return {
         ...state,
         phase: 'move_select',

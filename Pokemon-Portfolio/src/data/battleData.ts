@@ -87,6 +87,65 @@ export const PROJECTS: Project[] = [
   },
 ]
 
+export const ABOUT_SUBMOVES: Move[] = [
+  {
+    id: 'intro',
+    name: 'INTRO',
+    type: 'NORMAL',
+    pp: 1,
+    ppMax: 1,
+    damage: 0,
+    used: false,
+    dialogueLines: [
+      'ZACHARY DOLL used INTRO!',
+      '[Your intro / about me text\ngoes here.]',
+      '[Add more lines\nas needed.]',
+    ],
+  },
+  {
+    id: 'experience',
+    name: 'EXPERIENCE',
+    type: 'NORMAL',
+    pp: 1,
+    ppMax: 1,
+    damage: 0,
+    used: false,
+    dialogueLines: [
+      'ZACHARY DOLL used\nEXPERIENCE!',
+      '[Job title] at [Company]\n[Year – Year]',
+      '[Add more roles\nas needed.]',
+    ],
+  },
+  {
+    id: 'education',
+    name: 'EDUCATION',
+    type: 'NORMAL',
+    pp: 1,
+    ppMax: 1,
+    damage: 0,
+    used: false,
+    dialogueLines: [
+      'ZACHARY DOLL used\nEDUCATION!',
+      '[Degree] in [Field]\n[University], [Year]',
+    ],
+  },
+  {
+    id: 'skills',
+    name: 'SKILLS',
+    type: 'ELECTRIC',
+    pp: 1,
+    ppMax: 1,
+    damage: 0,
+    used: false,
+    dialogueLines: [
+      'ZACHARY DOLL used SKILLS!',
+      'React, TypeScript, Node.js,\nPython, PostgreSQL.',
+      'Also fluent in:\nDocker, AWS, Git.',
+      "It's super effective!",
+    ],
+  },
+]
+
 export const INITIAL_MOVES: Move[] = [
   {
     id: 'about',
@@ -96,26 +155,20 @@ export const INITIAL_MOVES: Move[] = [
     ppMax: 1,
     damage: 20,
     used: false,
-    dialogueLines: [
-      'A wild ZACHARY DOLL appeared!',
-      'Zack is a software developer\nwho loves building things.',
-      'He is passionate about\nclean code and pixel art.',
-      'Nice to meet you!',
-    ],
+    dialogueLines: [],
   },
   {
-    id: 'skills',
-    name: 'SKILLS',
-    type: 'ELECTRIC',
+    id: 'resume',
+    name: 'RESUME',
+    type: 'NORMAL',
     pp: 1,
     ppMax: 1,
     damage: 25,
     used: false,
+    downloadUrl: '/resume.pdf',
     dialogueLines: [
-      'ZACHARY DOLL used SKILLS!',
-      'React, TypeScript, Node.js,\nPython, PostgreSQL.',
-      'Also fluent in:\nDocker, AWS, Git.',
-      "It's super effective!",
+      'ZACHARY DOLL shared\ntheir RESUME!',
+      'A download was triggered!',
     ],
   },
   {
@@ -126,12 +179,7 @@ export const INITIAL_MOVES: Move[] = [
     ppMax: 1,
     damage: 35,
     used: false,
-    dialogueLines: [
-      'ZACHARY DOLL used PROJECTS!',
-      'Project 1: A full-stack web app\nfor managing [description].',
-      'Project 2: [Description].\ngithub.com/zack/project2',
-      "ZACHARY DOLL's portfolio took a\ncritical hit!",
-    ],
+    dialogueLines: [],
   },
   {
     id: 'contact',

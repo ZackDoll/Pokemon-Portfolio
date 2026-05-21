@@ -6,6 +6,7 @@ import BattleDialogue from '../BattleDialogue/BattleDialogue'
 import MoveMenu from '../MoveMenu/MoveMenu'
 import BattleIntro from '../BattleIntro/BattleIntro'
 import ProjectMenu from '../ProjectMenu/ProjectMenu'
+import AboutSubMenu from '../AboutSubMenu/AboutSubMenu'
 import styles from './BattleScene.module.css'
 
 interface Props {
@@ -64,6 +65,7 @@ export default function BattleScene({ state, dispatch }: Props) {
             phase={state.phase}
             dispatch={dispatch}
           />
+          <AboutSubMenu phase={state.phase} dispatch={dispatch} />
         </div>
       </div>
 

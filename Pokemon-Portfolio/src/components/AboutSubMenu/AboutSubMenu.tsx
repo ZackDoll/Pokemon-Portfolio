@@ -1,49 +1,51 @@
 import { useState, useEffect, useCallback } from 'react'
-import type { Move, BattlePhase, BattleAction } from '../../types/battle'
-import styles from './MoveMenu.module.css'
+import type { BattlePhase, BattleAction } from '../../types/battle'
+import { ABOUT_SUBMOVES } from '../../data/battleData'
+import styles from './AboutSubMenu.module.css'
 
 interface Props {
-  moves: Move[]
   phase: BattlePhase
   dispatch: React.Dispatch<BattleAction>
 }
 
-export default function MoveMenu({ moves, phase, dispatch }: Props) {
+export default function AboutSubMenu({ phase, dispatch }: Props) {
   const [focusIndex, setFocusIndex] = useState(0)
-  const isVisible = phase === 'move_select'
+  const isVisible = phase === 'about_submenu'
 
-  const selectMove = useCallback(
-    (id: string) => {
-      const move = moves.find((m) => m.id === id)
-      if (move?.downloadUrl) window.open(move.downloadUrl, '_blank')
-      dispatch({ type: 'SELECT_MOVE', moveId: id })
-    },
-    [moves, dispatch]
+  const selectSubmove = useCallback(
+    (id: string) => dispatch({ type: 'SELECT_SUBMOVE', submoveId: id }),
+    [dispatch]
+  )
+
+  const close = useCallback(
+    () => dispatch({ type: 'CLOSE_ABOUT_SUBMENU' }),
+    [dispatch]
   )
 
   useEffect(() => {
     if (!isVisible) return
     function onKey(e: KeyboardEvent) {
+      if (e.code === 'Escape' || e.code === 'KeyX') { close(); return }
       if (e.code === 'ArrowRight') setFocusIndex((i) => (i % 2 === 0 ? i + 1 : i))
       if (e.code === 'ArrowLeft')  setFocusIndex((i) => (i % 2 === 1 ? i - 1 : i))
       if (e.code === 'ArrowDown')  setFocusIndex((i) => (i < 2 ? i + 2 : i))
       if (e.code === 'ArrowUp')    setFocusIndex((i) => (i >= 2 ? i - 2 : i))
-      if (e.code === 'Enter' || e.code === 'KeyZ') selectMove(moves[focusIndex].id)
+      if (e.code === 'Enter' || e.code === 'KeyZ') selectSubmove(ABOUT_SUBMOVES[focusIndex].id)
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [isVisible, focusIndex, moves, selectMove, dispatch])
+  }, [isVisible, focusIndex, selectSubmove, close])
 
   if (!isVisible) return null
 
   return (
     <div className={styles.container}>
       <div className={styles.optionsBox}>
-        {moves.map((move, i) => (
+        {ABOUT_SUBMOVES.map((move, i) => (
           <button
             key={move.id}
-            className={`${styles.moveBtn} ${i === focusIndex ? styles.focused : ''} ${move.used ? styles.used : ''}`}
-            onClick={() => selectMove(move.id)}
+            className={`${styles.moveBtn} ${i === focusIndex ? styles.focused : ''}`}
+            onClick={() => selectSubmove(move.id)}
             onMouseEnter={() => setFocusIndex(i)}
           >
             <span className={styles.arrow} />
