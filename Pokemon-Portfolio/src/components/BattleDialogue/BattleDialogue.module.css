@@ -7,13 +7,13 @@
   padding: 10px 16px 10px 40px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   position: relative;
   cursor: pointer;
 }
 
 .text {
-  margin-top: 45px;
+  margin-top: 4px;
   font-family: var(--font-pixel);
   font-size: 35px;
   line-height: 1.3;
