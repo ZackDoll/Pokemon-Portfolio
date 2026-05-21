@@ -19,8 +19,8 @@
 /* Placeholder sprite positions — replaced by real sprites later */
 .enemySprite {
   position: absolute;
-  bottom: 76px;
-  right: 100px;
+  bottom: 110px;
+  right: 160px;
   width: 96px;
   height: 96px;
   background: rgba(200, 120, 200, 0.6);
@@ -35,8 +35,8 @@
 
 .playerSprite {
   position: absolute;
-  bottom: 28px;
-  left: 80px;
+  bottom: -10px;
+  left: 220px;
   width: 80px;
   height: 80px;
   background: rgba(80, 120, 200, 0.6);
