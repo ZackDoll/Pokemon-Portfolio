@@ -8,10 +8,8 @@ interface Props {
 export default function PlayerPanel({ name, level }: Props) {
   return (
     <div className={styles.panel}>
-      <div className={styles.nameRow}>
-        <span className={styles.name}>{name}</span>
-        <span className={styles.level}>Lv{level}</span>
-      </div>
+      <span className={styles.name}>{name}</span>
+      <span className={styles.level}>{level}</span>
     </div>
   )
 }

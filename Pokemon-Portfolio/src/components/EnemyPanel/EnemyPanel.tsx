@@ -33,10 +33,8 @@ export default function EnemyPanel({ hp, hpMax, name, level, phase, dispatch }: 
 
   return (
     <div className={`${styles.panel} ${flashing ? styles.flashing : ''}`}>
-      <div className={styles.nameRow}>
-        <span className={styles.name}>{name}</span>
-        <span className={styles.level}>Lv{level}</span>
-      </div>
+      <span className={styles.name}>{name}</span>
+      <span className={styles.level}>{level}</span>
     </div>
   )
 }
