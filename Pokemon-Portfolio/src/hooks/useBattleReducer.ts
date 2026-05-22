@@ -17,9 +17,12 @@ function battleReducer(state: BattleState, action: BattleAction): BattleState {
       const move = state.moves.find((m) => m.id === action.moveId)
       if (!move) return state
 
-      // About and Projects moves open sub-menus instead of attacking directly
+      // Some moves open sub-menus instead of attacking directly
       if (move.id === 'about') {
         return { ...state, phase: 'about_submenu' }
+      }
+      if (move.id === 'experience') {
+        return { ...state, phase: 'bag_menu' }
       }
       if (move.id === 'projects') {
         return { ...state, phase: 'project_menu' }
@@ -118,6 +121,14 @@ function battleReducer(state: BattleState, action: BattleAction): BattleState {
     }
 
     case 'CLOSE_ABOUT_SUBMENU':
+      return {
+        ...state,
+        phase: 'move_select',
+        currentDialogue: 'What will\nRECRUITER do?',
+        dialogueComplete: false,
+      }
+
+    case 'CLOSE_BAG_MENU':
       return {
         ...state,
         phase: 'move_select',

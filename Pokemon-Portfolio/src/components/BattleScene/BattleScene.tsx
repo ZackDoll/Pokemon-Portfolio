@@ -7,6 +7,7 @@ import MoveMenu from '../MoveMenu/MoveMenu'
 import BattleIntro from '../BattleIntro/BattleIntro'
 import ProjectMenu from '../ProjectMenu/ProjectMenu'
 import AboutSubMenu from '../AboutSubMenu/AboutSubMenu'
+import BagMenu from '../BagMenu/BagMenu'
 import styles from './BattleScene.module.css'
 
 interface Props {
@@ -76,6 +77,9 @@ export default function BattleScene({ state, dispatch }: Props) {
 
       {/* About sub-menu */}
       <AboutSubMenu phase={state.phase} dispatch={dispatch} />
+
+      {/* Bag menu */}
+      <BagMenu phase={state.phase} dispatch={dispatch} />
 
       {/* Restart button */}
       <button

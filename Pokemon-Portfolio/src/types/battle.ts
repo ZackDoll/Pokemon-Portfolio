@@ -7,6 +7,7 @@ export type BattlePhase =
   | 'animating'
   | 'dialogue'
   | 'fainted'
+  | 'bag_menu'
 
 export type MoveType =
   | 'NORMAL'
@@ -61,6 +62,7 @@ export type BattleAction =
   | { type: 'CLOSE_PROJECT_MENU' }
   | { type: 'SELECT_SUBMOVE'; submoveId: string }
   | { type: 'CLOSE_ABOUT_SUBMENU' }
+  | { type: 'CLOSE_BAG_MENU' }
   | { type: 'HP_DRAIN_COMPLETE' }
   | { type: 'TYPEWRITER_COMPLETE' }
   | { type: 'ADVANCE_DIALOGUE' }
