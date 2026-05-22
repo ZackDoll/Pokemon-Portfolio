@@ -29,6 +29,7 @@ export default function BagMenu({ phase, dispatch }: Props) {
   return (
     <div className={styles.overlay} onClick={close}>
       <img src="/pokemon-assets/bag_back_blue.png" className={styles.bgImg} alt="" draggable={false} />
+      <img src="/pokemon-assets/red_bag_arrow.png" className={styles.arrow} alt="" draggable={false} />
     </div>
   )
 }

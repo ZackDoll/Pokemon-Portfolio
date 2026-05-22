@@ -13,3 +13,17 @@
   height: 100%;
   display: block;
 }
+
+.arrow {
+  position: absolute;
+  left: 234px;
+  top: 156px;
+  width: 32px;
+  height: 34px;
+  animation: arrowBounce 0.25s ease-in-out infinite alternate;
+}
+
+@keyframes arrowBounce {
+  from { transform: translateX(0); }
+  to   { transform: translateX(8px); }
+}
