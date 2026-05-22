@@ -13,7 +13,11 @@ export default function AboutSubMenu({ phase, dispatch }: Props) {
   const isVisible = phase === 'about_submenu'
 
   const selectSubmove = useCallback(
-    (id: string) => dispatch({ type: 'SELECT_SUBMOVE', submoveId: id }),
+    (id: string) => {
+      const move = ABOUT_SUBMOVES.find((m) => m.id === id)
+      if (move?.downloadUrl) window.open(move.downloadUrl, '_blank')
+      dispatch({ type: 'SELECT_SUBMOVE', submoveId: id })
+    },
     [dispatch]
   )
 
