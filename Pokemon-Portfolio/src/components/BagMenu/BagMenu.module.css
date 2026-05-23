@@ -67,3 +67,22 @@
   visibility: visible;
 }
 
+.description {
+  position: absolute;
+  bottom: 10px;
+  top: 278px;
+  left: 160px;
+  right: 42px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.descText {
+  display: block;
+  font-family: var(--font-pixel);
+  color: #fff;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.8);
+  white-space: pre-line;
+  line-height: 1.4;
+}
+
