@@ -85,6 +85,8 @@
 }
 
 .typeValue {
-  bottom: 20px;
-  left: 575px;
+  bottom: 21px;
+  left: 662px;
+  right: auto;
+  text-align: left;
 }
