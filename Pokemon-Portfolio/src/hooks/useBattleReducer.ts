@@ -94,6 +94,17 @@ function battleReducer(state: BattleState, action: BattleAction): BattleState {
       const aboutMove = state.moves.find((m) => m.id === 'about')
       if (!aboutMove) return state
 
+      if (action.submoveId === 'intro') {
+        if (aboutMove.used) {
+          return { ...state, phase: 'pokedex_entry' }
+        }
+        const updatedMoves = state.moves.map((m) =>
+          m.id === 'about' ? { ...m, used: true, pp: 0 } : m
+        )
+        const newHp = Math.max(0, state.enemyHp - aboutMove.damage)
+        return { ...state, phase: 'pokedex_entry', activeMove: 'about', enemyHp: newHp, moves: updatedMoves }
+      }
+
       if (aboutMove.used) {
         return {
           ...state,
@@ -135,6 +146,12 @@ function battleReducer(state: BattleState, action: BattleAction): BattleState {
         currentDialogue: 'What will\nRECRUITER do?',
         dialogueComplete: false,
       }
+
+    case 'CLOSE_POKEDEX_ENTRY':
+      if (state.enemyHp <= 0) {
+        return { ...state, phase: 'fainted', currentDialogue: 'ZACHARY DOLL fainted!', dialogueComplete: false }
+      }
+      return { ...state, phase: 'move_select', activeMove: null, currentDialogue: 'What will\nRECRUITER do?', dialogueComplete: false }
 
     case 'HP_DRAIN_COMPLETE': {
       if (state.phase !== 'animating') return state
