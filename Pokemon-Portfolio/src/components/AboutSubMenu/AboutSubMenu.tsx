@@ -42,6 +42,8 @@ export default function AboutSubMenu({ phase, dispatch }: Props) {
 
   if (!isVisible) return null
 
+  const focused = ABOUT_SUBMOVES[focusIndex]
+
   return (
     <div className={styles.overlay}>
       <img src="/pokemon-assets/move_inspect.png" className={styles.bgImg} alt="" draggable={false} />
@@ -58,6 +60,9 @@ export default function AboutSubMenu({ phase, dispatch }: Props) {
           </button>
         ))}
       </div>
+
+      <span className={styles.ppValue}>{focused.pp}&nbsp;&nbsp;{focused.ppMax}</span>
+      <span className={styles.typeValue}>{focused.type}</span>
     </div>
   )
 }

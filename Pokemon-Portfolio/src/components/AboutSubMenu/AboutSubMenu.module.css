@@ -66,3 +66,25 @@
   letter-spacing: 0;
   text-shadow: 1px 1px 0 rgba(136, 120, 152, 0.9);
 }
+
+.ppValue,
+.typeValue {
+  position: absolute;
+  left: 555px;
+  right: 0;
+  font-family: var(--font-pixel);
+  font-size: 32px;
+  color: var(--pokemon-black);
+  text-shadow: 1px 1px 0 rgba(136, 120, 152, 0.9);
+  text-align: center;
+}
+
+.ppValue {
+  top: 26px;
+  left: 670px;
+}
+
+.typeValue {
+  bottom: 20px;
+  left: 575px;
+}

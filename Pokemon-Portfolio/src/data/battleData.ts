@@ -92,8 +92,8 @@ export const ABOUT_SUBMOVES: Move[] = [
     id: 'intro',
     name: 'INTRO',
     type: 'NORMAL',
-    pp: 1,
-    ppMax: 1,
+    pp: 10,
+    ppMax: 10,
     damage: 0,
     used: false,
     dialogueLines: [
@@ -119,9 +119,9 @@ export const ABOUT_SUBMOVES: Move[] = [
   {
     id: 'education',
     name: 'EDUCATION',
-    type: 'NORMAL',
-    pp: 1,
-    ppMax: 1,
+    type: 'PSYCHIC',
+    pp: 5,
+    ppMax: 5,
     damage: 0,
     used: false,
     dialogueLines: [
@@ -133,8 +133,8 @@ export const ABOUT_SUBMOVES: Move[] = [
     id: 'skills',
     name: 'SKILLS',
     type: 'ELECTRIC',
-    pp: 1,
-    ppMax: 1,
+    pp: 15,
+    ppMax: 15,
     damage: 0,
     used: false,
     dialogueLines: [
