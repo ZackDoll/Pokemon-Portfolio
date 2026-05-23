@@ -27,3 +27,43 @@
   from { transform: translateX(0); }
   to   { transform: translateX(8px); }
 }
+
+.optionList {
+  position: absolute;
+  top: 30px;
+  left: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.optionBtn {
+  background: none;
+  border: none;
+  font-family: var(--font-pixel);
+  font-size: 22px;
+  color: var(--pokemon-black);
+  text-shadow: 1px 1px 0 rgba(136, 120, 152, 0.5);
+  text-align: left;
+  cursor: pointer;
+  padding: 4px 4px;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.selector {
+  width: 13px;
+  height: 18px;
+  background-image: url('/pokemon-assets/arrow_selector.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  flex-shrink: 0;
+  visibility: hidden;
+}
+
+.optionBtn.focused .selector {
+  visibility: visible;
+}
+
