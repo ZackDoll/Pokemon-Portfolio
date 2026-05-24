@@ -14,6 +14,28 @@
   display: block;
 }
 
+.dexNumber {
+  position: absolute;
+  left: 10%;
+  top: 14.75%;
+  font-family: var(--font-pixel);
+  font-size: 32px;
+  color: var(--pokemon-black);
+  text-shadow: 1px 1px 0 rgba(136, 120, 152, 0.9);
+  pointer-events: none;
+}
+
+.dexCategory {
+  position: absolute;
+  left: 6%;
+  top: 26%;
+  font-family: var(--font-pixel);
+  font-size: 34px;
+  color: var(--pokemon-black);
+  text-shadow: 1px 1px 0 rgba(136, 120, 152, 0.9);
+  pointer-events: none;
+}
+
 .photo {
   position: absolute;
   left: 65%;
