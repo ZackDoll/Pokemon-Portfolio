@@ -9,6 +9,7 @@ export type BattlePhase =
   | 'fainted'
   | 'bag_menu'
   | 'pokedex_entry'
+  | 'tm_case'
 
 export type MoveType =
   | 'NORMAL'
@@ -65,6 +66,7 @@ export type BattleAction =
   | { type: 'CLOSE_ABOUT_SUBMENU' }
   | { type: 'CLOSE_BAG_MENU' }
   | { type: 'CLOSE_POKEDEX_ENTRY' }
+  | { type: 'CLOSE_TM_CASE' }
   | { type: 'HP_DRAIN_COMPLETE' }
   | { type: 'TYPEWRITER_COMPLETE' }
   | { type: 'ADVANCE_DIALOGUE' }

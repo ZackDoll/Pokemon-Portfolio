@@ -10,6 +10,7 @@ const PRELOAD_ASSETS = [
   '/pokemon-assets/pokedex_entry.png',
   '/pokemon-assets/profile.png',
   '/pokemon-assets/arrow_selector.png',
+  '/pokemon-assets/tm_case.png',
 ]
 
 function App() {

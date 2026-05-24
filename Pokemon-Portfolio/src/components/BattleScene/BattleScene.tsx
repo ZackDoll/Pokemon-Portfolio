@@ -9,6 +9,7 @@ import ProjectMenu from '../ProjectMenu/ProjectMenu'
 import AboutSubMenu from '../AboutSubMenu/AboutSubMenu'
 import BagMenu from '../BagMenu/BagMenu'
 import PokedexEntry from '../PokedexEntry/PokedexEntry'
+import TMCase from '../TMCase/TMCase'
 import styles from './BattleScene.module.css'
 
 interface Props {
@@ -84,6 +85,9 @@ export default function BattleScene({ state, dispatch }: Props) {
 
       {/* Pokédex entry */}
       <PokedexEntry phase={state.phase} dispatch={dispatch} />
+
+      {/* TM Case */}
+      <TMCase phase={state.phase} dispatch={dispatch} />
 
       {/* Restart button */}
       <button
