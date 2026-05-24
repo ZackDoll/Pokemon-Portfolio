@@ -147,12 +147,12 @@ export const ABOUT_SUBMOVES: Move[] = [
 ]
 
 export const TM_SKILLS = [
-  { id: 'tm01', number: 'TM01', name: 'REACT',      category: 'FRAMEWORK', description: 'A powerful UI library\nfor building fast,\ncomponent-driven apps.' },
-  { id: 'tm02', number: 'TM02', name: 'TYPESCRIPT', category: 'LANGUAGE',  description: 'Typed superset of JS.\nCatches bugs at compile\ntime before they ship.' },
-  { id: 'tm03', number: 'TM03', name: 'NODE.JS',    category: 'RUNTIME',   description: 'Server-side JS runtime.\nBuilds APIs and backend\nservices efficiently.' },
-  { id: 'tm04', number: 'TM04', name: 'POSTGRESQL', category: 'DATABASE',  description: 'Relational database.\nComplex queries and\ndata integrity.' },
-  { id: 'tm05', number: 'TM05', name: 'DOCKER',     category: 'TOOL',      description: 'Containerizes apps for\nconsistent dev and\nproduction environments.' },
-  { id: 'tm06', number: 'TM06', name: 'AWS',        category: 'CLOUD',     description: 'Cloud infrastructure.\nDeploy, scale, and\nmonitor applications.' },
+  { id: 'hm01', number: 'HM01', name: 'REACT',      category: 'FRAMEWORK', isHM: true,  description: 'A powerful UI library\nfor building fast,\ncomponent-driven apps.' },
+  { id: 'hm02', number: 'HM02', name: 'TYPESCRIPT', category: 'LANGUAGE',  isHM: true,  description: 'Typed superset of JS.\nCatches bugs at compile\ntime before they ship.' },
+  { id: 'hm03', number: 'HM03', name: 'NODE.JS',    category: 'RUNTIME',   isHM: true,  description: 'Server-side JS runtime.\nBuilds APIs and backend\nservices efficiently.' },
+  { id: 'tm01', number: 'TM01', name: 'POSTGRESQL', category: 'DATABASE',  isHM: false, description: 'Relational database.\nComplex queries and\ndata integrity.' },
+  { id: 'tm02', number: 'TM02', name: 'DOCKER',     category: 'TOOL',      isHM: false, description: 'Containerizes apps for\nconsistent dev and\nproduction environments.' },
+  { id: 'tm03', number: 'TM03', name: 'AWS',        category: 'CLOUD',     isHM: false, description: 'Cloud infrastructure.\nDeploy, scale, and\nmonitor applications.' },
 ]
 
 export const INITIAL_MOVES: Move[] = [

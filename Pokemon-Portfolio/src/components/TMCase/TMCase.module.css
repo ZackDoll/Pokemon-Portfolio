@@ -17,7 +17,7 @@
 .tmList {
   position: absolute;
   top: 8%;
-  left: 2%;
+  left: 30%;
   width: 26%;
   bottom: 42%;
   overflow: hidden;
@@ -52,6 +52,14 @@
 
 .tmBtn.focused .selector {
   visibility: visible;
+}
+
+.hmIcon {
+  width: 18px;
+  height: 14px;
+  object-fit: contain;
+  flex-shrink: 0;
+  margin-right: 2px;
 }
 
 .tmNumber {
