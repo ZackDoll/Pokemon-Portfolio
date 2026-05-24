@@ -16,18 +16,18 @@
 
 .photo {
   position: absolute;
-  left: 47%;
-  top: 18%;
-  width: 80px;
-  height: 80px;
+  left: 65%;
+  top: 5%;
+  width: 180px;
+  height: 180px;
   object-fit: cover;
   pointer-events: none;
 }
 
 .bioArea {
   position: absolute;
-  top: 57%;
-  bottom: 4%;
+  top: 58%;
+  bottom: 8%;
   left: 5%;
   right: 5%;
   overflow: hidden;
