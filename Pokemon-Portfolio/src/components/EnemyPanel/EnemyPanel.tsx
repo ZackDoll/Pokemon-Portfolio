@@ -21,7 +21,7 @@ export default function EnemyPanel({ hp, hpMax, name, level, phase, dispatch }: 
     }
   }, [phase, dispatch])
 
-  const { displayHp } = useHpAnimation(hp, hpMax, onHpDone)
+  useHpAnimation(hp, hpMax, onHpDone)
 
   useEffect(() => {
     if (phase === 'animating') {
