@@ -199,7 +199,7 @@ export const INITIAL_MOVES: Move[] = [
     ppMax: 1,
     damage: 20,
     used: false,
-    downloadUrl: '/resume.pdf',
+    downloadUrl: '/pokemon-assets/Zachary_Doll_resume_Apr_2026.pdf',
     dialogueLines: [
       'ZACHARY DOLL shared\ntheir RESUME!',
       'A download was triggered!',
