@@ -48,7 +48,7 @@ export default function BattleScene({ state, dispatch }: Props) {
           name="RECRUITER"
           level={99}
         />
-        <div className={styles.enemySprite}>ZACHARY DOLL</div>
+        <img src="/pokemon-assets/zack-base-stance.png" className={styles.enemySprite} alt="" draggable={false} />
         <div className={styles.playerSprite}>YOU</div>
       </div>
 

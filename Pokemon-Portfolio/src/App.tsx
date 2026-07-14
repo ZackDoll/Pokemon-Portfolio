@@ -12,6 +12,7 @@ const PRELOAD_ASSETS = [
   '/pokemon-assets/arrow_selector.png',
   '/pokemon-assets/tm_case.png',
   '/pokemon-assets/HM_icon.png',
+  '/pokemon-assets/zack-base-stance.png',
 ]
 
 function App() {
