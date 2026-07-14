@@ -49,7 +49,7 @@ export default function BattleScene({ state, dispatch }: Props) {
           level={99}
         />
         <img src="/pokemon-assets/zack-base-stance.png" className={styles.enemySprite} alt="" draggable={false} />
-        <div className={styles.playerSprite}>YOU</div>
+        <img src="/pokemon-assets/may-base-stance.png" className={styles.playerSprite} alt="" draggable={false} />
       </div>
 
       {/* UI bar */}

@@ -29,18 +29,12 @@
 
 .playerSprite {
   position: absolute;
-  bottom: -10px;
-  left: 220px;
-  width: 80px;
-  height: 80px;
-  background: rgba(80, 120, 200, 0.6);
-  border: 3px solid #4060a0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-pixel);
-  font-size: 7px;
-  color: #fff;
+  bottom: -6px;
+  left: 185px;
+  width: 160px;
+  height: 160px;
+  image-rendering: pixelated;
+  object-fit: contain;
 }
 
 /* UI bar at the bottom */
