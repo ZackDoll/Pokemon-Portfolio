@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import type { BattleState, BattleAction } from '../../types/battle'
 import EnemyPanel from '../EnemyPanel/EnemyPanel'
 import PlayerPanel from '../PlayerPanel/PlayerPanel'
@@ -17,8 +17,51 @@ interface Props {
   dispatch: React.Dispatch<BattleAction>
 }
 
+const CAST_MS = 500
+
+type SpriteFrame = 'base' | 'charge' | 'fire'
+
+const ENEMY_SPRITES: Record<SpriteFrame, string> = {
+  base:   '/pokemon-assets/zack-base-stance.png',
+  charge: '/pokemon-assets/zack-cast-charge.png',
+  fire:   '/pokemon-assets/zack-cast-fire.png',
+}
+
 export default function BattleScene({ state, dispatch }: Props) {
   const sceneRef = useRef<HTMLDivElement>(null)
+  const [spriteFrame, setSpriteFrame] = useState<SpriteFrame>('base')
+  const t1Ref = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const t2Ref = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const activeMoveRef = useRef<string | null>(null)
+  const isAnimatingRef = useRef(false)
+
+  useEffect(() => {
+    if (state.phase !== 'animating' || isAnimatingRef.current) return
+    isAnimatingRef.current = true
+    activeMoveRef.current = state.activeMove
+    setSpriteFrame('charge')
+    t1Ref.current = setTimeout(() => {
+      setSpriteFrame('fire')
+      if (activeMoveRef.current === 'resume') {
+        const a = document.createElement('a')
+        a.href = '/pokemon-assets/Zachary_Doll_resume_Apr_2026.pdf'
+        a.download = 'Zachary_Doll_Resume.pdf'
+        document.body.appendChild(a)
+        a.click()
+        document.body.removeChild(a)
+      }
+      t2Ref.current = setTimeout(() => {
+        setSpriteFrame('base')
+        isAnimatingRef.current = false
+      }, CAST_MS)
+    }, CAST_MS)
+  }, [state.phase, state.activeMove])
+
+  // Cleanup timers on unmount only
+  useEffect(() => () => {
+    if (t1Ref.current) clearTimeout(t1Ref.current)
+    if (t2Ref.current) clearTimeout(t2Ref.current)
+  }, [])
 
   useEffect(() => {
     function scale() {
@@ -48,7 +91,7 @@ export default function BattleScene({ state, dispatch }: Props) {
           name="RECRUITER"
           level={99}
         />
-        <img src="/pokemon-assets/zack-base-stance.png" className={styles.enemySprite} alt="" draggable={false} />
+        <img src={ENEMY_SPRITES[spriteFrame]} className={styles.enemySprite} alt="" draggable={false} />
         <img src="/pokemon-assets/may-base-stance.png" className={styles.playerSprite} alt="" draggable={false} />
       </div>
 

@@ -13,6 +13,8 @@ const PRELOAD_ASSETS = [
   '/pokemon-assets/tm_case.png',
   '/pokemon-assets/HM_icon.png',
   '/pokemon-assets/zack-base-stance.png',
+  '/pokemon-assets/zack-cast-charge.png',
+  '/pokemon-assets/zack-cast-fire.png',
   '/pokemon-assets/may-base-stance.png',
 ]
 

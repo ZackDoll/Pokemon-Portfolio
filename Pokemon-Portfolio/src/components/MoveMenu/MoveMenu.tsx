@@ -14,11 +14,9 @@ export default function MoveMenu({ moves, phase, dispatch }: Props) {
 
   const selectMove = useCallback(
     (id: string) => {
-      const move = moves.find((m) => m.id === id)
-      if (move?.downloadUrl) window.open(move.downloadUrl, '_blank')
       dispatch({ type: 'SELECT_MOVE', moveId: id })
     },
-    [moves, dispatch]
+    [dispatch]
   )
 
   useEffect(() => {
