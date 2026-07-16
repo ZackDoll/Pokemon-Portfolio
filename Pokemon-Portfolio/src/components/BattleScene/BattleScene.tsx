@@ -30,6 +30,7 @@ const ENEMY_SPRITES: Record<SpriteFrame, string> = {
 export default function BattleScene({ state, dispatch }: Props) {
   const sceneRef = useRef<HTMLDivElement>(null)
   const [spriteFrame, setSpriteFrame] = useState<SpriteFrame>('base')
+  const [resumeIconVisible, setResumeIconVisible] = useState(false)
   const t1Ref = useRef<ReturnType<typeof setTimeout> | null>(null)
   const t2Ref = useRef<ReturnType<typeof setTimeout> | null>(null)
   const activeMoveRef = useRef<string | null>(null)
@@ -43,7 +44,11 @@ export default function BattleScene({ state, dispatch }: Props) {
     t1Ref.current = setTimeout(() => {
       setSpriteFrame('fire')
       if (activeMoveRef.current === 'resume') {
-        setTimeout(() => window.open('/pokemon-assets/Zachary_Doll_resume_Apr_2026.pdf', '_blank'), 2000)
+        setResumeIconVisible(true)
+        setTimeout(() => {
+          setResumeIconVisible(false)
+          window.open('/pokemon-assets/Zachary_Doll_resume_Apr_2026.pdf', '_blank')
+        }, 2000)
       }
       t2Ref.current = setTimeout(() => {
         setSpriteFrame('base')
@@ -88,6 +93,9 @@ export default function BattleScene({ state, dispatch }: Props) {
         />
         <img src={ENEMY_SPRITES[spriteFrame]} className={styles.enemySprite} alt="" draggable={false} />
         <img src="/pokemon-assets/may-base-stance.png" className={styles.playerSprite} alt="" draggable={false} />
+        {resumeIconVisible && (
+          <img src="/pokemon-assets/resume-icon.png" className={styles.resumeProjectile} alt="" draggable={false} />
+        )}
       </div>
 
       {/* UI bar */}

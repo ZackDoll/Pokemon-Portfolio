@@ -35,6 +35,24 @@
   height: 160px;
   image-rendering: pixelated;
   object-fit: contain;
+  z-index: 2;
+}
+
+.resumeProjectile {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  left: 587px;
+  top: 69px;
+  image-rendering: pixelated;
+  pointer-events: none;
+  z-index: 1;
+  animation: resumeShot 2s linear forwards;
+}
+
+@keyframes resumeShot {
+  from { transform: translate(0, 0) rotate(0deg); }
+  to   { transform: translate(-342px, 101px) rotate(720deg); }
 }
 
 /* UI bar at the bottom */
