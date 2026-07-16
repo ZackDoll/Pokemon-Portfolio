@@ -43,12 +43,7 @@ export default function BattleScene({ state, dispatch }: Props) {
     t1Ref.current = setTimeout(() => {
       setSpriteFrame('fire')
       if (activeMoveRef.current === 'resume') {
-        const a = document.createElement('a')
-        a.href = '/pokemon-assets/Zachary_Doll_resume_Apr_2026.pdf'
-        a.download = 'Zachary_Doll_Resume.pdf'
-        document.body.appendChild(a)
-        a.click()
-        document.body.removeChild(a)
+        setTimeout(() => window.open('/pokemon-assets/Zachary_Doll_resume_Apr_2026.pdf', '_blank'), 2000)
       }
       t2Ref.current = setTimeout(() => {
         setSpriteFrame('base')
