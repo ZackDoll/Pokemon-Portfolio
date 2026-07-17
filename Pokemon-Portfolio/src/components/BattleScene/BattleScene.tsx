@@ -22,7 +22,7 @@ const CAST_MS = 500
 type SpriteFrame = 'base' | 'charge' | 'fire'
 
 const ENEMY_SPRITES: Record<SpriteFrame, string> = {
-  base:   '/pokemon-assets/zack-base-stance.png',
+  base:   '/pokemon-assets/zack-base-stance-updated.png',
   charge: '/pokemon-assets/zack-cast-charge.png',
   fire:   '/pokemon-assets/zack-cast-fire.png',
 }
@@ -48,7 +48,7 @@ export default function BattleScene({ state, dispatch }: Props) {
         setTimeout(() => {
           setResumeIconVisible(false)
           window.open('/pokemon-assets/Zachary_Doll_resume_Apr_2026.pdf', '_blank')
-        }, 2000)
+        }, 1500)
       }
       t2Ref.current = setTimeout(() => {
         setSpriteFrame('base')
@@ -91,7 +91,13 @@ export default function BattleScene({ state, dispatch }: Props) {
           name="RECRUITER"
           level={99}
         />
-        <img src={ENEMY_SPRITES[spriteFrame]} className={styles.enemySprite} alt="" draggable={false} />
+        <img
+          src={ENEMY_SPRITES[spriteFrame]}
+          className={styles.enemySprite}
+          style={spriteFrame === 'base' ? { transform: 'scaleX(-1)' } : { transform: 'translateY(-10px)' }}
+          alt=""
+          draggable={false}
+        />
         <img src="/pokemon-assets/may-base-stance.png" className={styles.playerSprite} alt="" draggable={false} />
         {resumeIconVisible && (
           <img src="/pokemon-assets/resume-icon.png" className={styles.resumeProjectile} alt="" draggable={false} />

@@ -47,7 +47,7 @@
   image-rendering: pixelated;
   pointer-events: none;
   z-index: 1;
-  animation: resumeShot 2s linear forwards;
+  animation: resumeShot 1.5s linear forwards;
 }
 
 @keyframes resumeShot {
