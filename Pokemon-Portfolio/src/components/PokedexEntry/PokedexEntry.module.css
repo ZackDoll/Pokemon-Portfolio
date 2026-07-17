@@ -36,6 +36,41 @@
   pointer-events: none;
 }
 
+.fieldSection {
+  position: absolute;
+  top: 38%;
+  left: 6%;
+  width: 245px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  row-gap: 6px;
+  column-gap: 14px;
+  pointer-events: none;
+}
+
+.fieldRow {
+  display: contents;
+}
+
+.fieldValue {
+  text-align: right;
+}
+
+.fieldLabel {
+  font-family: var(--font-pixel);
+  font-size: 26px;
+  color: var(--pokemon-black);
+  text-shadow: 1px 1px 0 rgba(136, 120, 152, 0.9);
+  min-width: 48px;
+}
+
+.fieldValue {
+  font-family: var(--font-pixel);
+  font-size: 26px;
+  color: var(--pokemon-black);
+  text-shadow: 1px 1px 0 rgba(136, 120, 152, 0.9);
+}
+
 .photo {
   position: absolute;
   left: 65%;

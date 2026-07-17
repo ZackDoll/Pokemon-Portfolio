@@ -44,6 +44,16 @@ export default function PokedexEntry({ phase, dispatch }: Props) {
       />
       <span className={styles.dexNumber}>No{' '}521</span>
       <span className={styles.dexCategory}>DEVELOPER POKéMON</span>
+      <div className={styles.fieldSection}>
+        <div className={styles.fieldRow}>
+          <span className={styles.fieldLabel}>EDU</span>
+          <span className={styles.fieldValue}>CS AT UCLA</span>
+        </div>
+        <div className={styles.fieldRow}>
+          <span className={styles.fieldLabel}>GPA</span>
+          <span className={styles.fieldValue}>3.91</span>
+        </div>
+      </div>
       {!photoError && (
         <img
           src="/pokemon-assets/profile.png"
