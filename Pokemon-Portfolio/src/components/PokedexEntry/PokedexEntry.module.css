@@ -70,7 +70,7 @@
 
 .contactSection {
   position: absolute;
-  top: 76%;
+  top: 58%;
   right: 3%;
   display: flex;
   flex-direction: column;
@@ -110,7 +110,7 @@
   top: 60%;
   bottom: 3%;
   left: 5%;
-  right: 5%;
+  width: 68%;
   overflow: hidden;
   pointer-events: none;
 }
