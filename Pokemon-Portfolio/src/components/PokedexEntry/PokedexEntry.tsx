@@ -70,7 +70,11 @@ export default function PokedexEntry({ phase, dispatch }: Props) {
       )}
       <div className={styles.bioArea}>
         <span className={styles.bioText}>
-          {'[Bio goes here — 1-2 sentences about yourself.]'}
+          {'A restless species, prone to sudden shifts between full-stack development and machine learning. ' +
+           'Its natural habitat spans React, TypeScript, Python, Node, and PHP, with a den fortified deep in database architecture. ' +
+           'Reported by trainers to collect side projects at an unusual rate, motives unknown. ' +
+           'Rumored sightings place this species on basketball courts and rock faces when not in captivity. ' +
+           'Data on this species remains incomplete.'}
         </span>
       </div>
     </div>
