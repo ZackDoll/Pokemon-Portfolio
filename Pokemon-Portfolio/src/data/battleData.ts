@@ -87,65 +87,6 @@ export const PROJECTS: Project[] = [
   },
 ]
 
-export const ABOUT_SUBMOVES: Move[] = [
-  {
-    id: 'intro',
-    name: 'INTRO',
-    type: 'NORMAL',
-    pp: 10,
-    ppMax: 10,
-    damage: 0,
-    used: false,
-    dialogueLines: [
-      'ZACHARY DOLL used INTRO!',
-      '[Your intro / about me text\ngoes here.]',
-      '[Add more lines\nas needed.]',
-    ],
-  },
-  {
-    id: 'contact',
-    name: 'CONTACT',
-    type: 'WATER',
-    pp: 1,
-    ppMax: 1,
-    damage: 0,
-    used: false,
-    dialogueLines: [
-      'ZACHARY DOLL used CONTACT!',
-      'Email:\nzack@example.com',
-      'LinkedIn: linkedin.com/in/zack\nGitHub: github.com/zack',
-      'ZACHARY DOLL wants to connect!',
-    ],
-  },
-  {
-    id: 'education',
-    name: 'EDUCATION',
-    type: 'PSYCHIC',
-    pp: 5,
-    ppMax: 5,
-    damage: 0,
-    used: false,
-    dialogueLines: [
-      'ZACHARY DOLL used\nEDUCATION!',
-      '[Degree] in [Field]\n[University], [Year]',
-    ],
-  },
-  {
-    id: 'skills',
-    name: 'SKILLS',
-    type: 'ELECTRIC',
-    pp: 15,
-    ppMax: 15,
-    damage: 0,
-    used: false,
-    dialogueLines: [
-      'ZACHARY DOLL used SKILLS!',
-      'React, TypeScript, Node.js,\nPython, PostgreSQL.',
-      'Also fluent in:\nDocker, AWS, Git.',
-      "It's super effective!",
-    ],
-  },
-]
 
 export const TM_SKILLS = [
   { id: 'hm01', number: 'HM01', name: 'REACT',      category: 'FRAMEWORK', isHM: true,  description: 'A powerful UI library\nfor building fast,\ncomponent-driven apps.' },

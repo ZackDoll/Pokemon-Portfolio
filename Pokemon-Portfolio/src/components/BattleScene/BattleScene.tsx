@@ -6,7 +6,6 @@ import BattleDialogue from '../BattleDialogue/BattleDialogue'
 import MoveMenu from '../MoveMenu/MoveMenu'
 import BattleIntro from '../BattleIntro/BattleIntro'
 import ProjectMenu from '../ProjectMenu/ProjectMenu'
-import AboutSubMenu from '../AboutSubMenu/AboutSubMenu'
 import BagMenu from '../BagMenu/BagMenu'
 import PokedexEntry from '../PokedexEntry/PokedexEntry'
 import TMCase from '../TMCase/TMCase'
@@ -128,9 +127,6 @@ export default function BattleScene({ state, dispatch }: Props) {
 
       {/* Project party menu */}
       <ProjectMenu phase={state.phase} dispatch={dispatch} />
-
-      {/* About sub-menu */}
-      <AboutSubMenu phase={state.phase} dispatch={dispatch} />
 
       {/* Bag menu */}
       <BagMenu phase={state.phase} dispatch={dispatch} />

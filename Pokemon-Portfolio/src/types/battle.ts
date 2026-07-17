@@ -2,7 +2,6 @@ export type BattlePhase =
   | 'intro'
   | 'idle'
   | 'move_select'
-  | 'about_submenu'
   | 'project_menu'
   | 'animating'
   | 'dialogue'
@@ -62,8 +61,6 @@ export type BattleAction =
   | { type: 'SELECT_MOVE'; moveId: string }
   | { type: 'SELECT_PROJECT'; projectId: string }
   | { type: 'CLOSE_PROJECT_MENU' }
-  | { type: 'SELECT_SUBMOVE'; submoveId: string }
-  | { type: 'CLOSE_ABOUT_SUBMENU' }
   | { type: 'CLOSE_BAG_MENU' }
   | { type: 'CLOSE_POKEDEX_ENTRY' }
   | { type: 'CLOSE_TM_CASE' }
