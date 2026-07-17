@@ -42,8 +42,8 @@ export default function PokedexEntry({ phase, dispatch }: Props) {
         alt=""
         draggable={false}
       />
-      <span className={styles.dexNumber}>521</span>
-      <span className={styles.dexCategory}>DEVELOPER</span>
+      <span className={styles.dexNumber}>No{' '}521</span>
+      <span className={styles.dexCategory}>DEVELOPER POKéMON</span>
       {!photoError && (
         <img
           src="/pokemon-assets/profile.png"
