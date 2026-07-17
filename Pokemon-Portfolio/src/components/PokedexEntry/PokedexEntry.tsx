@@ -51,7 +51,7 @@ export default function PokedexEntry({ phase, dispatch }: Props) {
         </div>
         <div className={styles.fieldRow}>
           <span className={styles.fieldLabel}>GPA</span>
-          <span className={styles.fieldValue}>3.91</span>
+          <span className={styles.fieldValue}>3.86</span>
         </div>
       </div>
       <div className={styles.contactSection}>
