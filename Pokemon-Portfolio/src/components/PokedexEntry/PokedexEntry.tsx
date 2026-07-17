@@ -54,6 +54,11 @@ export default function PokedexEntry({ phase, dispatch }: Props) {
           <span className={styles.fieldValue}>3.91</span>
         </div>
       </div>
+      <div className={styles.contactSection}>
+        <a href="mailto:zack.j.doll@gmail.com" className={styles.contactValue} onClick={e => e.stopPropagation()}>ZACK.J.DOLL@GMAIL.COM</a>
+        <a href="https://github.com/ZackDoll" target="_blank" rel="noopener noreferrer" className={styles.contactValue} onClick={e => e.stopPropagation()}>GITHUB/ZACKDOLL</a>
+        <a href="https://linkedin.com/in/zackdoll" target="_blank" rel="noopener noreferrer" className={styles.contactValue} onClick={e => e.stopPropagation()}>LINKEDIN/ZACKDOLL</a>
+      </div>
       {!photoError && (
         <img
           src="/pokemon-assets/profile.png"
@@ -65,7 +70,7 @@ export default function PokedexEntry({ phase, dispatch }: Props) {
       )}
       <div className={styles.bioArea}>
         <span className={styles.bioText}>
-          {'[Your bio text goes here.\nAdd a few sentences about yourself,\nyour background, and what you do.]'}
+          {'[Bio goes here — 1-2 sentences about yourself.]'}
         </span>
       </div>
     </div>
