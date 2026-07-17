@@ -53,7 +53,7 @@ export default function BattleScene({ state, dispatch }: Props) {
       t2Ref.current = setTimeout(() => {
         setSpriteFrame('base')
         isAnimatingRef.current = false
-      }, CAST_MS)
+      }, 1500)
     }, CAST_MS)
   }, [state.phase, state.activeMove])
 
